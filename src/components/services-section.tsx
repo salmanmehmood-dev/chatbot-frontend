@@ -6,9 +6,7 @@ import "keen-slider/keen-slider.min.css";
 import { Card, CardContent } from "@/components/ui/card";
 import dynamic from "next/dynamic";
 
-const ServicesQuoteForm = dynamic(() => import("./services-quote-form"), {
-  ssr: false,
-});
+const ServicesQuoteForm = dynamic(() => import("./services-quote-form"));
 
 
 const services = [
