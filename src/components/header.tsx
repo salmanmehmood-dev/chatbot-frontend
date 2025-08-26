@@ -16,16 +16,17 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-header-background border-b border-header-border shadow-nav">
       <div className="mx-auto px-6 sm:px-8 lg:px-12 py-1">
-        <div className="flex h-[59px] items-center justify-between">
+        <div className="flex h-[59px] items-center justify-between ">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <Link href="/" className="flex items-center space-x-2">
+          <div className="flex items-center space-x-3 h-full">
+            <Link href="/" className="flex items-center space-x-2 h-full">
               <Image
                 src="/logos/Logo.png"
                 alt="Logo"
-                width={200}
-                height={60}
-                className="object-contain"
+                width={160}
+                height={48}
+                className="object-contain h-16 w-auto pt-4"
+                priority
               />
             </Link>
           </div>

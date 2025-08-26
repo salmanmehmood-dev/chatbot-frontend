@@ -3,55 +3,32 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+  All color and gradient styles should be managed via Tailwind config (tailwind.config.ts) for consistency and easy theming.
+  Remove hardcoded color values from global CSS. Use Tailwind utility classes in your components instead.
+  If you need a custom color, add it to tailwind.config.ts and use the generated class.
+*/
+
 body {
   font-family: 'Inter', sans-serif;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: hsl(var(--muted));
-}
-
-::-webkit-scrollbar-thumb {
-  background: hsl(var(--muted-foreground));
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--primary));
-}
-
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Accessibility improvements */
 @layer base {
   body {
     font-family: 'Inter', sans-serif;
   }
-  
   h1, h2 {
     letter-spacing: -0.5px;
   }
-
-  /* Focus styles for better accessibility */
-  *:focus {
-    outline: 2px solid #FF77A5;
-    outline-offset: 2px;
-  }
-
   /* Ensure minimum touch target sizes */
   button, a, input, textarea, select {
     min-height: 20px;
     min-width: 20px;
   }
-
   /* Skip link for screen readers */
   .skip-link {
     position: absolute;
@@ -63,7 +40,6 @@ html {
     text-decoration: none;
     z-index: 1000;
   }
-  
   .skip-link:focus {
     top: 6px;
   }
@@ -73,72 +49,7 @@ html {
   .text-brand-gradient {
     @apply text-transparent bg-clip-text bg-brand-gradient;
   }
-  .bg-brand-gradient {
-    background-image: linear-gradient(to right, #57007B, #F76680);
-  }
-  
-  /* High contrast mode support */
-  @media (prefers-contrast: high) {
-    .text-muted {
-      color: #000000 !important;
-    }
-    .bg-gray-200 {
-      background-color: #ffffff !important;
-      border: 2px solid #000000 !important;
-    }
-  }
-
-  /* Reduced motion support */
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-    }
-  }
-
-  /* Enhanced focus indicators */
-  .focus-visible:focus {
-    outline: 2px solid #FF77A5;
-    outline-offset: 2px;
-    border-radius: 4px;
-  }
-
-  /* Better contrast for interactive elements */
-  .interactive-element {
-    @apply min-h-[44px] min-w-[44px] p-2 rounded transition-all;
-  }
-  
-  .interactive-element:hover {
-    @apply bg-gray-100;
-  }
-  
-  .interactive-element:focus {
-    @apply ring-2 ring-[#FF77A5] ring-opacity-50 outline-none;
-  }
-}
-
-/* Color contrast improvements */
-.text-muted {
-  color: #4B5563 !important; /* Darker gray for better contrast */
-}
-
-.text-gray-600 {
-  color: #374151 !important; /* Darker for better contrast */
-}
-
-.text-gray-500 {
-  color: #6B7280 !important; /* Darker for better contrast */
-}
-
-.text-gray-400 {
-  color: #9CA3AF !important; /* Keep as fallback but ensure good contrast */
-}
-
-.border-brand {
-  border-color: #F76680;
-}
-
-.border-brand-accent {
-  border-color: #F76680;
+  /* Use Tailwind's bg-brand-gradient, bg-featured-gradient, etc. for backgrounds. */
+  /* Add more utility classes in tailwind.config.ts if needed. */
+  /* High contrast and reduced motion support can be added as needed, using Tailwind classes. */
 }

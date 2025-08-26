@@ -86,24 +86,24 @@ const ServicesQuoteForm: React.FC = () => {
       onSubmit={handleSubmit}
     >
       {/* Step Indicator */}
-      <div className="flex items-center justify-center gap-2 text-sm text-gray-700">
-        <span className="flex h-6 w-6 items-center justify-center rounded-full border border-gray-300 bg-white text-black">
+      <div className="flex items-center justify-center gap-2 text-sm text-brand">
+        <span className="flex h-6 w-6 items-center justify-center rounded-full border border-accent-mint bg-white text-black">
           1
         </span>
         <span>Personal Info</span>
         <span>&gt;</span>
-        <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#FF77A5] text-white">
+        <span className="flex h-6 w-6 items-center justify-center rounded-full bg-accent-mint text-white">
           2
         </span>
-        <span className="font-semibold text-[#FF77A5]">Our services</span>
+        <span className="font-semibold text-accent-mint">Our services</span>
       </div>
 
       {/* Title */}
-      <h2 className="text-xl font-semibold text-gray-900">Services</h2>
+  <h2 className="text-xl font-semibold text-brand">Services</h2>
 
       {/* Services */}
-      <fieldset className="rounded-md bg-[#F9F9F9] px-4 py-6 space-y-3">
-        <legend className="block text-sm font-medium text-gray-900 mb-3">
+      <fieldset className="rounded-md bg-white px-4 py-6 space-y-3 border border-accent-mint">
+        <legend className="block text-sm font-medium text-brand mb-3">
           Why are you contacting us?
         </legend>
         <div
@@ -114,7 +114,7 @@ const ServicesQuoteForm: React.FC = () => {
           {SERVICES.map(({ label, key }) => (
             <div
               key={key}
-              className="flex items-start gap-3 min-h-[44px] p-2 rounded hover:bg-gray-50"
+              className="flex items-start gap-3 min-h-[44px] p-2 rounded hover:bg-mint-white-gradient"
             >
               <CheckboxBox
                 id={`service-${key}`}
@@ -124,7 +124,7 @@ const ServicesQuoteForm: React.FC = () => {
               />
               <label
                 htmlFor={`service-${key}`}
-                className="sm:w-[212px] text-sm font-normal text-gray-800 leading-snug cursor-pointer select-none"
+                className="sm:w-[212px] text-sm font-normal text-brand leading-snug cursor-pointer select-none"
                 id={`service-${key}-desc`}
               >
                 {label}
@@ -135,32 +135,32 @@ const ServicesQuoteForm: React.FC = () => {
       </fieldset>
 
       {/* Project Description */}
-      <div className="space-y-2 rounded-md bg-[#F9F9F9] px-4 py-6">
+      <div className="space-y-2 rounded-md bg-white px-4 py-6 border border-accent-mint">
         <label
           htmlFor="project-description"
-          className="block text-sm font-medium text-gray-900"
+          className="block text-sm font-medium text-brand"
         >
           Tell us about your project
         </label>
         <textarea
           id="project-description"
           aria-describedby="project-description-hint"
-          className="w-full resize-none rounded-md border border-gray-300 bg-white p-3 text-sm text-gray-900 focus:border-[#FF77A5] focus:outline-none focus:ring-2 focus:ring-[#FF77A5] focus:ring-opacity-25"
+          className="w-full resize-none rounded-md border border-accent-mint bg-white p-3 text-sm text-brand focus:border-accent-mint focus:outline-none focus:ring-2 focus:ring-accent-mint focus:ring-opacity-25"
           rows={4}
           placeholder="Describe your project requirements..."
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-        <p id="project-description-hint" className="text-xs text-gray-600">
+        <p id="project-description-hint" className="text-xs text-muted">
           Please provide details about your project requirements and goals.
         </p>
       </div>
 
       {/* Email Input */}
-      <div className="space-y-2 rounded-md bg-[#F9F9F9] px-4 py-6">
+      <div className="space-y-2 rounded-md bg-white px-4 py-6 border border-accent-mint">
         <label
           htmlFor="email"
-          className="block text-sm font-medium text-gray-900"
+          className="block text-sm font-medium text-brand"
         >
           Your email address
         </label>
@@ -169,7 +169,7 @@ const ServicesQuoteForm: React.FC = () => {
           type="email"
           id="email"
           aria-describedby="email-hint"
-          className="w-full rounded-md border border-gray-300 bg-white p-3 text-sm text-gray-900 focus:border-[#FF77A5] focus:outline-none focus:ring-2 focus:ring-[#FF77A5] focus:ring-opacity-25"
+          className="w-full rounded-md border border-accent-mint bg-white p-3 text-sm text-brand focus:border-accent-mint focus:outline-none focus:ring-2 focus:ring-accent-mint focus:ring-opacity-25"
           placeholder="Enter your email address..."
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -179,7 +179,7 @@ const ServicesQuoteForm: React.FC = () => {
               : "false"
           }
         />
-        <p id="email-hint" className="text-xs text-gray-600">
+        <p id="email-hint" className="text-xs text-muted">
           We&apos;ll use this email to send you the project quote.
         </p>
         {email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && (
@@ -193,17 +193,17 @@ const ServicesQuoteForm: React.FC = () => {
       <div className="mx-auto w-[calc(100%-2rem)] space-y-2">
         <label
           htmlFor="days-slider"
-          className="block text-sm font-medium text-gray-900"
+          className="block text-sm font-medium text-brand"
         >
           Project Duration (Days)
         </label>
         <div aria-labelledby="days-slider">
           <DaysSlider days={days} setDays={setDays} />
         </div>
-        <div className="text-sm text-gray-700" aria-live="polite">
+  <div className="text-sm text-brand" aria-live="polite">
           Selected: {days} day{days > 1 ? "s" : ""}
         </div>
-        <p className="text-xs text-gray-600">
+  <p className="text-xs text-muted">
           Use the slider to indicate your preferred project timeline.
         </p>
       </div>
@@ -212,7 +212,7 @@ const ServicesQuoteForm: React.FC = () => {
       <div className="mx-auto w-[calc(100%-2rem)] space-y-2">
         <label
           htmlFor="budget-range"
-          className="block text-sm font-medium text-gray-900"
+          className="block text-sm font-medium text-brand"
         >
           Budget Range
         </label>
@@ -228,7 +228,7 @@ const ServicesQuoteForm: React.FC = () => {
         {/* Submit Button */}
         <div className="flex justify-end pt-4">
           <Button
-            className="min-w-[200px] min-h-[44px] px-8 py-3 text-white bg-[#FF77A5] hover:bg-[#ff6699] focus:ring-2 focus:ring-[#FF77A5] focus:ring-opacity-50 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+            className="min-w-[200px] min-h-[44px] px-8 py-3 text-white bg-brand-gradient hover:opacity-90 focus:ring-2 focus:ring-accent-mint focus:ring-opacity-50 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed transition-all"
             type="submit"
             disabled={
               selectedServices.length === 0 || days === 0 || email === ""

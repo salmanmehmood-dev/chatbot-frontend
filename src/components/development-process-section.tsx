@@ -41,13 +41,13 @@ const steps = [
 
 export default function DevelopmentProcess() {
   return (
-    <section className="py-16 px-4 max-w-7xl mx-auto relative">
+  <section className="py-16 px-4 max-w-7xl mx-auto relative">
       {/* Heading */}
       <div className="text-center mb-28">
         <div className="mx-auto h-[0.4rem] w-20 bg-brand-gradient mb-8 rounded-full" />
-        <h2 className="text-4xl text-section-subheading mb-4">How development</h2>
-        <h3 className="text-4xl font-bold text-foreground">
-          through <span className="text-foreground font-semibold">Alcaline</span> works
+        <h2 className="text-4xl text-section-heading mb-4">How development</h2>
+        <h3 className="text-4xl font-bold text-brand">
+          through <span className="text-accent-mint font-semibold">ZaufLabs</span> works
         </h3>
       </div>
 
@@ -56,12 +56,12 @@ export default function DevelopmentProcess() {
         {steps.slice(0, 3).map((step, idx) => (
           <div
             key={idx}
-            className="md:max-w-[320px] relative md:right-3 z-10 p-6 bg-white rounded-lg shadow-sm border text-left md:mb-8"
+            className="md:max-w-[320px] relative md:right-3 z-10 p-6 bg-white rounded-lg shadow-sm border border-accent-mint text-left md:mb-8"
           >
-            <div className="absolute left-1/2 transform -translate-x-1/2 top-full w-[0.2rem] h-12 bg-pink-500 hidden md:block" />
-            <h4 className="text-lg font-bold text-pink-700 mb-4">
+            <div className="absolute left-1/2 transform -translate-x-1/2 top-full w-[0.2rem] h-12 bg-accent-mint hidden md:block" />
+            <h4 className="text-lg font-bold text-brand mb-4">
               {step.number}{' '}
-              <span className="text-foreground">{step.title}</span>
+              <span className="text-accent-mint">{step.title}</span>
             </h4>
             <p className="text-muted text-sm">{step.description}</p>
           </div>
@@ -70,7 +70,7 @@ export default function DevelopmentProcess() {
         {/* Line with curves */}
         <div className="absolute top-full left-0 w-[calc(100%-2rem)] hidden md:block z-0">
           <div className="relative w-full h-4 mt-[11px]">
-            <div className="absolute top-2 left-0 w-full h-[0.2rem] bg-pink-500" />
+            <div className="absolute top-2 left-0 w-full h-[0.2rem] bg-accent-mint" />
             <div className="absolute top-0 left-0 w-8 h-4">
               <div className="w-full h-full rounded-bl-lg" />
             </div>
@@ -78,13 +78,12 @@ export default function DevelopmentProcess() {
               <div className="w-full h-full rounded-br-lg" />
             </div>
             <div className="absolute top-[-15px] right-[-33px] flex items-center justify-center m-3 mr-0">
-              {/* <Trophy className="text-yellow-500 w-8 h-8" /> */}
               <Image
                 src="/trophy.png"
                 alt="Trophy"
                 width={32}
                 height={32}
-                className="text-yellow-500 w-8 h-8"
+                className="w-8 h-8"
               />
             </div>
           </div>
@@ -96,12 +95,12 @@ export default function DevelopmentProcess() {
         {steps.slice(3, 6).map((step, idx) => (
           <div
             key={idx}
-            className="md:max-w-[320px] relative md:left-3 z-10 p-6 bg-white rounded-lg shadow-sm border text-left"
+            className="md:max-w-[320px] relative md:left-3 z-10 p-6 bg-white rounded-lg shadow-sm border border-accent-mint text-left"
           >
-            <div className="absolute left-1/2 transform translate-x-10 bottom-full w-[0.2rem] h-10 bg-pink-500 hidden md:block" />
-            <h4 className="text-lg font-bold text-pink-700 mb-4">
+            <div className="absolute left-1/2 transform translate-x-10 bottom-full w-[0.2rem] h-10 bg-accent-mint hidden md:block" />
+            <h4 className="text-lg font-bold text-brand mb-4">
               {step.number}{' '}
-              <span className="text-foreground">{step.title}</span>
+              <span className="text-accent-mint">{step.title}</span>
             </h4>
             <p className="text-muted text-sm">{step.description}</p>
           </div>

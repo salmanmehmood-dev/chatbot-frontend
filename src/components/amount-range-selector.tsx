@@ -33,8 +33,8 @@ const AmountRangeSelector: React.FC<AmountRangeSelectorProps> = ({
           aria-valuenow={value[0]}
           aria-valuetext={`Budget range from $${value[0]} to $${value[1]}`}
         >
-          <SliderPrimitive.Track className='relative h-2 w-full grow overflow-hidden rounded-full bg-[#E6E6E6]'>
-            <SliderPrimitive.Range className='absolute h-full bg-[#ffffff]' />
+          <SliderPrimitive.Track className='relative h-2 w-full grow overflow-hidden rounded-full bg-gray-200'>
+            <SliderPrimitive.Range className='absolute h-full bg-accent-mint' />
           </SliderPrimitive.Track>
 
           {value.map((val, index) => {
@@ -43,7 +43,7 @@ const AmountRangeSelector: React.FC<AmountRangeSelectorProps> = ({
             return (
               <React.Fragment key={index}>
                 <SliderPrimitive.Thumb 
-                  className='transition-all duration-200 ease-in-out relative z-10 block w-4 h-4 rounded-full border-2 border-white bg-[#FF77A5] shadow-md focus:outline-none focus:ring-2 focus:ring-[#FF77A5] focus:ring-opacity-50 cursor-pointer hover:scale-110'
+                  className='transition-all duration-200 ease-in-out relative z-10 block w-4 h-4 rounded-full border-2 border-white bg-accent-mint shadow-md focus:outline-none focus:ring-2 focus:ring-accent-mint focus:ring-opacity-50 cursor-pointer hover:scale-110'
                   aria-label={`Set budget ${index === 0 ? 'minimum' : 'maximum'} to $${val}`}
                 />
                 <div

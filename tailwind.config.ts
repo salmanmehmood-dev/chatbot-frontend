@@ -1,3 +1,26 @@
+
+/**
+ * ZaufLabs Tailwind Color System
+ *
+ * All project colors are defined here for easy global theming.
+ *
+ * Usage:
+ * - Use semantic color names in your components (e.g. bg-brand, text-accent, border-header-border)
+ * - Change color values here to update everywhere in the project
+ *
+ * Color Palette:
+ *   Black:      #000000  (text, headings, icons)
+ *   Blue:       #213152  (primary brand, buttons, links)
+ *   Neon Green: #9DFDC1  (accents, highlights)
+ *   Mint Green: #0FB89C  (accents, highlights)
+ *   White:      #FFFFFF  (background, cards, sections)
+ *
+ * Example usage:
+ *   bg-brand, text-brand, border-brand, bg-accent, text-accent, etc.
+ *
+ * For each color group below, see comments for where it is used.
+ */
+
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -9,80 +32,93 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        /**
+         * Brand Colors
+         * - Used for primary actions, links, logo, and main highlights
+         */
         brand: {
-          DEFAULT: "#57007B",
-          dark: "#36004e",
+          DEFAULT: "#213152", // Blue (primary brand)
+          dark: "#000000",   // Black (for dark accents)
         },
-        accent: "#F76680",
-        muted: "#4B5563", // Changed from #666666 to darker gray for better contrast
-        mutedForeground: "#1F2937", // Changed from #333333 to darker gray
-        foreground: "#000000",
-        //service-section
-        cardBg: "#FAFAFA",
-        cardBorder: "#FF77A5",
-        headline: "#2D3748",
-        subtext: "#718096",
-
-        pink: {
-          DEFAULT: "#F76680",
-          500: "#F76680",
-          700: "#C53060",
+        /**
+         * Accent Colors
+         * - Used for buttons, highlights, and call-to-actions
+         */
+        accent: {
+          DEFAULT: "#9DFDC1", // Neon Green
+          mint: "#0FB89C",    // Mint Green
         },
-        yellow: {
-          500: "#ECC94B",
-        },
+        /**
+         * Neutral Colors
+         * - Used for text, backgrounds, borders
+         */
+        black: "#000000", // Main text, headings
+        white: "#FFFFFF", // Backgrounds, cards
+        muted: "#4B5563", // Muted text
+        foreground: "#000000", // Default text color
+        /**
+         * Header Colors
+         * - Used in header.tsx for background, border, text, hover
+         */
         header: {
-          text: "#374151", // text-gray-700 (darker for better contrast)
-          hover: "#000000",
+          text: "#213152", // Blue (header text)
+          hover: "#0FB89C", // Mint Green (header hover)
           border: "#E2E8F0", // border-gray-200
-          background: "#FFFFFF",
+          background: "#FFFFFF", // White (header background)
         },
+        /**
+         * Footer Colors
+         * - Used in footer.tsx for background, border, text, links, icons
+         */
         footer: {
-          bg: "#ffffff",
-          border: "#E2E8F0", // border-gray-200
-          text: "#374151", // text-gray-700 (darker for better contrast)
-          link: "#1F2937", // text-gray-800
-          icon: "#374151", // text-gray-700
-          muted: "#6B7280", // text-gray-500 (darker for better contrast)
+          bg: "#FFFFFF",
+          border: "#E2E8F0",
+          text: "#213152", // Blue (footer text)
+          link: "#0FB89C", // Mint Green (footer links)
+          icon: "#213152", // Blue (footer icons)
+          muted: "#4B5563", // Muted text
         },
+        /**
+         * Section/Feature Colors
+         * - Used in section backgrounds, headings, subheadings, etc.
+         */
         featured: {
-          heading: "#1F2937", // text-gray-800 (darker for better contrast)
-          title: "#111827", // text-gray-900 (darker for better contrast)
-          linkText: "#000000", // fallback for arrow icons
+          heading: "#213152", // Blue
+          title: "#000000", // Black
+          linkText: "#0FB89C", // Mint Green
         },
-        //great softeware
         section: {
-          background: "#ffffff",
-          heading: "#111827", // text-gray-900 (darker for better contrast)
-          subheading: "#1F2937", // text-gray-800 (darker for better contrast)
-          body: "#374151", // text-gray-700 (darker for better contrast)
-          quote: "#6B46C1", // violet-500
-          role: "#6B7280", // text-gray-500 (darker for better contrast)
+          background: "#FFFFFF",
+          heading: "#213152",
+          subheading: "#0FB89C",
+          body: "#4B5563",
+          quote: "#9DFDC1",
+          role: "#0FB89C",
         },
-
-        light: {
-          purple: "#e8ebfb",
-          green: "#e8fbf3",
-          pink: "#fbe8fb",
-          //client-section
-          lavender: "#f8f5fb", // used for keen-slider background
-          purpleBorder: "#6b21a8", // tailwind purple-800 override
-          purpleHover: "#ede9fe", // tailwind purple-100 override
-          purpleDark: "#5b21b6", // tailwind purple-700 override
-        },
-
+        /**
+         * Highlight Colors
+         * - Used for text highlights in hero, etc.
+         */
         highlight: {
-          software: "#991566", // pinkish-purple for “software”
-          teams: "#b1287c", // brighter pink for “teams”
+          software: "#9DFDC1", // Neon Green
+          teams: "#0FB89C", // Mint Green
         },
       },
       backgroundImage: {
-        "brand-gradient": "linear-gradient(to right, #57007B, #F76680)",
-        "featured-gradient": "linear-gradient(to right,#57007B, #F76680)", // define custom name
-        "header-cta": "linear-gradient(to top right, #57007B, #F76680)",
-        //great software
-        "text-gradient": "linear-gradient(to right, #F76680, #57007B)",
-        "line-gradient": "linear-gradient(to right, #57007B, #F76680)",
+  /**
+   * Gradients (ZaufLabs base colors only)
+   * - All gradients use only Black (#000), Blue (#213152), Neon Green (#9DFDC1), Mint Green (#0FB89C), White (#FFF)
+   */
+  "brand-gradient": "linear-gradient(to right, #213152, #0FB89C)", // Blue to Mint Green
+  "featured-gradient": "linear-gradient(to right, #213152, #9DFDC1)", // Blue to Neon Green
+  "header-cta": "linear-gradient(to top right, #213152, #0FB89C)", // Blue to Mint Green
+  "text-gradient": "linear-gradient(to right, #0FB89C, #213152)", // Mint Green to Blue
+  "line-gradient": "linear-gradient(to right, #213152, #9DFDC1)", // Blue to Neon Green
+  "mint-neon-gradient": "linear-gradient(90deg, #0FB89C 0%, #9DFDC1 100%)", // Mint Green to Neon Green
+  "blue-black-gradient": "linear-gradient(90deg, #213152 0%, #000000 100%)", // Blue to Black
+  "white-blue-gradient": "linear-gradient(90deg, #FFFFFF 0%, #213152 100%)", // White to Blue
+  "mint-white-gradient": "linear-gradient(90deg, #0FB89C 0%, #FFFFFF 100%)", // Mint Green to White
+  "neon-white-gradient": "linear-gradient(90deg, #9DFDC1 0%, #FFFFFF 100%)", // Neon Green to White
       },
       boxShadow: {
         nav: "0 2px 12px rgba(0, 0, 0, 0.04)",
