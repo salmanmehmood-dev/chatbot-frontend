@@ -98,7 +98,7 @@ export default function DevelopmentProcess() {
             className="md:max-w-[320px] relative md:left-3 z-10 p-6 bg-white rounded-lg shadow-sm border border-accent-mint text-left dark:bg-gray-900 dark:border-accent-mint dark:text-white"
           >
             <div className="absolute left-1/2 transform translate-x-10 bottom-full w-[0.2rem] h-10 bg-accent-mint hidden md:block" />
-            <h4 className="text-lg font-bold text-brand mb-4 dark:text-accent-mint">
+            <h4 className="text-lg font-bold text-brand mb-4 dark:text-white">
               {step.number}{' '}
               <span className="text-accent-mint">{step.title}</span>
             </h4>
