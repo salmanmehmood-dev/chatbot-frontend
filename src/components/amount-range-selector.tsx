@@ -33,7 +33,7 @@ const AmountRangeSelector: React.FC<AmountRangeSelectorProps> = ({
           aria-valuenow={value[0]}
           aria-valuetext={`Budget range from $${value[0]} to $${value[1]}`}
         >
-          <SliderPrimitive.Track className='relative h-2 w-full grow overflow-hidden rounded-full bg-gray-200'>
+          <SliderPrimitive.Track className='relative h-2 w-full grow overflow-hidden rounded-full bg-footer-border dark:bg-brand-dark'>
             <SliderPrimitive.Range className='absolute h-full bg-accent-mint' />
           </SliderPrimitive.Track>
 
@@ -47,7 +47,7 @@ const AmountRangeSelector: React.FC<AmountRangeSelectorProps> = ({
                   aria-label={`Set budget ${index === 0 ? 'minimum' : 'maximum'} to $${val}`}
                 />
                 <div
-                  className='text-gray-700 absolute top-8 text-sm font-medium pointer-events-none'
+                  className='text-muted dark:text-footer-muted absolute top-8 text-sm font-medium pointer-events-none'
                   style={{ left: `calc(${percent}% - 32px)` }}
                   aria-hidden="true"
                 >

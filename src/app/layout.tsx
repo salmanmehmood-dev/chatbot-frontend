@@ -67,9 +67,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.variable} antialiased min-h-screen bg-background text-foreground`}
+        className={`${inter.variable} antialiased min-h-screen bg-background text-foreground dark:bg-black dark:text-white`}
       >
-        
         <div className="relative flex min-h-screen flex-col">
           {children}
         </div>

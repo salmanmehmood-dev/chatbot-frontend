@@ -73,11 +73,12 @@ export function ServicesSection() {
   });
   
   return (
-  <section id="services" className="py-12 sm:py-16 bg-white">
+  <section id="services" className="py-12 sm:py-16 bg-white dark:bg-black">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-28">
-          <h2 className="text-4xl font-bold text-brand">Services we offer</h2>
+          <div className="mx-auto h-1.5 w-20 bg-brand-gradient dark:bg-brand-gradient-dark mb-8 rounded-full" />
+          <h2 className="text-4xl font-bold text-brand dark:text-accent-mint">Services we offer</h2>
         </div>
 
         {/* Slider */}
@@ -100,26 +101,26 @@ export function ServicesSection() {
                     shadow-[0px_4px_30px_rgba(0,0,0,0.05)]
                     transition-all duration-300
                     w-[330px] h-[326px]
-
-                    ${isHovered ? "translate-y-2 z-10 scale-[1.02] border-accent-mint shadow-[0px_4px_30px_rgba(0,0,0,0.1)]" : ""}
+                    dark:bg-brand/30 dark:text-white dark:border-gray-800
+                    ${isHovered ? "translate-y-2 z-10 scale-[1.02] border-accent-mint shadow-[0px_4px_30px_rgba(0,0,0,0.1)] dark:border-accent-mint" : ""}
                     ${isOtherHovered ? "-translate-y-2 z-0" : ""}
                   `}
                 >
                   <CardContent className="p-[4.8%]">
                     {/* Icon */}
                     <div
-                      className="w-[58px] h-[58px] rounded-full flex items-center justify-center mb-[20px] border border-accent-mint bg-white"
+                      className="w-[58px] h-[58px] rounded-full flex items-center justify-center mb-[20px] border border-accent-mint bg-white dark:bg-brand"
                     >
-                      <span className="text-[34px]">{service.icon}</span>
+                      <span className="text-[34px] dark:text-accent-mint">{service.icon}</span>
                     </div>
 
                     {/* Title */}
-                    <h3 className="font-semibold text-[20px] leading-[27px] mb-[20px] text-brand">
+                    <h3 className="font-semibold text-[20px] leading-[27px] mb-[20px] text-brand dark:text-accent-mint">
                       {service.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-[14px] leading-[23px] text-muted">
+                    <p className="text-[14px] leading-[23px] text-muted dark:text-white/90">
                       {service.description}
                     </p>
                   </CardContent>
@@ -137,8 +138,8 @@ export function ServicesSection() {
               onClick={() => slider.current?.moveToIdx(idx)}
               className={`w-[1px] h-[1px] rounded-full transition-all duration-300 ${
                   idx === currentSlide
-                    ? "bg-accent-mint"
-                    : "bg-accent-mint/20 hover:bg-accent-mint/40"
+                    ? "bg-accent-mint dark:bg-accent-mint"
+                    : "bg-accent-mint/20 hover:bg-accent-mint/40 dark:bg-white/20 dark:hover:bg-accent-mint/40"
                 }`}
               aria-label={`Go to slide ${idx + 1}`}
             ></button>
@@ -150,8 +151,8 @@ export function ServicesSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-16">
         <div className="flex flex-col md:flex-row gap-8">
           <div className="flex-1">
-            <h2 className="text-2xl font-bold mb-4 text-brand">Get a Quote</h2>
-            <p className="text-sm text-muted mb-6">
+            <h2 className="text-2xl font-bold mb-4 text-brand dark:text-accent-mint">Get a Quote</h2>
+            <p className="text-sm text-muted mb-6 dark:text-white/80">
               Fill out the form below to get a personalized quote for your project.
             </p>
             <ServicesQuoteForm />

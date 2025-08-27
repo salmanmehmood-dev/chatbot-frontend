@@ -107,16 +107,16 @@ export default function TestimonialsSection() {
   // Show loading state during hydration
   if (!mounted) {
     return (
-      <section className="py-24 bg-white text-center relative overflow-hidden">
+      <section className="py-24 bg-white text-center relative overflow-hidden dark:bg-black dark:text-white">
         <div className="max-w-3xl mx-auto px-4">
-          <div className="mx-auto h-1.5 w-20 bg-brand-gradient mb-8 rounded-full" />
+          <div className="mx-auto h-1.5 w-20 bg-brand-gradient dark:bg-brand-gradient-dark mb-8 rounded-full" />
           <div className="text-4xl mb-4 inline-block pb-1">
             Why customers love
           </div>
-          <h2 className="text-4xl sm:text-3xl font-bold text-foreground mb-20">
+          <h2 className="text-4xl sm:text-3xl font-bold text-foreground mb-20 dark:text-accent-mint">
             working with us
           </h2>
-          <p className="text-muted max-w-xl mx-auto mb-18">
+          <p className="text-muted max-w-xl mx-auto mb-18 dark:text-white/80">
             {testimonials[0].content}
           </p>
         </div>
@@ -128,13 +128,13 @@ export default function TestimonialsSection() {
   }
 
   return (
-    <section className="py-24 bg-white text-center relative overflow-hidden">
+    <section className="py-24 bg-white text-center relative overflow-hidden dark:bg-black dark:text-white">
       <div className="max-w-3xl mx-auto px-4">
-        <div className="mx-auto h-1.5 w-20 bg-brand-gradient mb-8 rounded-full" />
+  <div className="mx-auto h-1.5 w-20 bg-brand-gradient dark:bg-brand-gradient-dark mb-8 rounded-full" />
         <div className="text-4xl mb-4 inline-block pb-1">
           Why customers love
         </div>
-        <h2 className="text-4xl sm:text-3xl font-bold text-foreground mb-8">
+        <h2 className="text-4xl sm:text-3xl font-bold text-foreground mb-8 dark:text-accent-mint">
           working with us
         </h2>
       </div>
@@ -142,23 +142,23 @@ export default function TestimonialsSection() {
       {/* Arrows */}
       <div className="max-w-6xl mx-auto px-8 flex justify-between items-center">
         <button
-          className="p-2 bg-white rounded-full shadow-md hover:bg-gray-100 transition-colors"
+          className="p-2 bg-white rounded-full shadow-md hover:bg-gray-100 transition-colors dark:bg-gray-900 dark:hover:bg-accent-mint"
           onClick={handlePrev}
           aria-labelledby="prev-button"
         >
-          <ChevronLeft className="w-6 h-6 text-gray-600" />
+          <ChevronLeft className="w-6 h-6 text-gray-600 dark:text-accent-mint" />
         </button>
         <button
-          className="p-2 bg-white rounded-full shadow-md hover:bg-gray-100 transition-colors"
+          className="p-2 bg-white rounded-full shadow-md hover:bg-gray-100 transition-colors dark:bg-gray-900 dark:hover:bg-accent-mint"
           onClick={handleNext}
           aria-labelledby="next-button"
         >
-          <ChevronRight className="w-6 h-6 text-gray-600" />
+          <ChevronRight className="w-6 h-6 text-gray-600 dark:text-accent-mint" />
         </button>
       </div>
 
       <div className="mt-8 px-4 max-w-6xl mx-auto flex justify-center">
-        <p className="text-muted max-w-xl mx-auto mb-18">
+        <p className="text-muted max-w-xl mx-auto mb-18 dark:text-white/80">
           {testimonials[activeIndex]?.content || testimonials[0].content}
         </p>
       </div>
@@ -170,7 +170,7 @@ export default function TestimonialsSection() {
           return (
             <div
               key={index}
-              className="keen-slider__slide flex flex-col items-center cursor-pointer "
+              className="keen-slider__slide flex flex-col items-center cursor-pointer"
               onClick={() => instanceRef.current?.moveToIdx(index)}
               style={{
                 opacity: isActive ? 1 : 0.5,
@@ -183,7 +183,7 @@ export default function TestimonialsSection() {
                 width={100}
                 height={100}
                 className={`rounded-full border-4 transition-all duration-300 ${
-                  isActive ? "border-brand-accent" : "border-transparent"
+                  isActive ? "border-brand-accent dark:border-accent-mint" : "border-transparent"
                 }`}
               />
               <div className="flex mt-2 mb-4">
@@ -200,14 +200,14 @@ export default function TestimonialsSection() {
               </div>
               <p
                 className={`text-base font-bold transition-colors duration-300 ${
-                  isActive ? "text-brand-dark" : "text-muted"
+                  isActive ? "text-brand-dark dark:text-accent-mint" : "text-muted dark:text-white/60"
                 }`}
               >
                 {testimonial.name}
               </p>
               <p
                 className={`text-sm transition-colors duration-300 ${
-                  isActive ? "text-foreground/70" : "text-muted/60"
+                  isActive ? "text-foreground/70 dark:text-white/80" : "text-muted/60 dark:text-white/60"
                 }`}
               >
                 {testimonial.role}

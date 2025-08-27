@@ -9,8 +9,39 @@
   If you need a custom color, add it to tailwind.config.ts and use the generated class.
 */
 
+
 body {
   font-family: 'Inter', sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+html.dark body {
+  background-color: #18181b;
+  color: #f4f4f5;
+}
+
+/* Utility for dark mode backgrounds (variation, not pure black) */
+.dark\:bg-dark-background {
+  background-color: #18181b !important;
+}
+.dark\:text-dark-foreground {
+  color: #f4f4f5 !important;
+}
+.dark\:border-dark-border {
+  border-color: #27272a !important;
+}
+.dark\:bg-dark-brand {
+  background-color: #9DFDC1 !important;
+  color: #18181b !important;
+}
+.dark\:text-dark-brand {
+  color: #9DFDC1 !important;
+}
+.dark\:hover\:bg-dark-muted:hover {
+  background-color: #232329 !important;
+}
+.dark\:hover\:text-dark-hover:hover {
+  color: #0FB89C !important;
 }
 
 html {

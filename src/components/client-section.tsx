@@ -43,13 +43,13 @@ export function ClientsSection() {
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 flex flex-col lg:flex-row items-start justify-between gap-6">
           <div>
-            <div className=" h-1.5 w-20 bg-brand-gradient mb-8 rounded-full" />
-            <h3 className="text-3xl md:text-4xl lg:text-4xl text-mutedForeground font-medium mb-4">
+            <div className=" h-1.5 w-20 bg-brand-gradient dark:bg-brand-gradient-dark mb-8 rounded-full" />
+            <h3 className="text-3xl md:text-4xl lg:text-4xl text-mutedForeground font-medium mb-4 dark:text-accent-mint">
               Meet the People
             </h3>
-            <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-foreground leading-snug">
+            <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-foreground leading-snug dark:text-white">
               We are{" "}
-              <span className="text-foreground font-extrabold">
+              <span className="text-foreground font-extrabold dark:text-accent-mint">
                 Working With
               </span>
             </h2>
@@ -62,17 +62,17 @@ export function ClientsSection() {
             name="prev"
             aria-label="Previous"
             onClick={() => instanceRef.current?.prev()}
-            className="w-10 h-10 rounded-full border border-light-purpleBorder text-light-purpleBorder hover:bg-light-purpleHover flex items-center justify-center transition"
+            className="w-10 h-10 rounded-full border border-light-purpleBorder text-light-purpleBorder hover:bg-light-purpleHover flex items-center justify-center transition dark:border-accent-mint dark:text-accent-mint dark:hover:bg-accent-mint/20"
           >
-            <ArrowLeft size={16} />
+            <ArrowLeft size={16} className="dark:text-accent-mint" />
           </button>
           <button
             name="next"
             aria-label="Next"
             onClick={() => instanceRef.current?.next()}
-            className="w-10 h-10 rounded-full bg-light-purpleBorder text-white hover:bg-light-purpleDark flex items-center justify-center transition"
+            className="w-10 h-10 rounded-full bg-light-purpleBorder text-white hover:bg-light-purpleDark flex items-center justify-center transition dark:bg-accent-mint dark:text-black dark:hover:bg-accent-mint/80"
           >
-            <ArrowRight size={16} />
+            <ArrowRight size={16} className="dark:text-black" />
           </button>
         </div>
       </div>
@@ -80,7 +80,7 @@ export function ClientsSection() {
       {/* Logo Slider */}
       <div
         ref={sliderRef}
-        className="keen-slider sm:h-50 md:h-56 lg:h-60 bg-light-lavender rounded-lg p-6"
+  className="keen-slider sm:h-50 md:h-56 lg:h-60 bg-light-lavender dark:bg-client-slider-gradient-dark rounded-lg p-6"
       >
         {logos.map((logo, idx) => (
           <div

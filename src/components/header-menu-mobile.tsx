@@ -26,7 +26,7 @@ export default function HeaderMenuMobile({
             {item.name}
           </Link>
         ))}
-        <Button className="mt-4 w-full min-h-[44px] bg-header-cta text-white rounded-[5px] font-semibold hover:opacity-90 focus:ring-2 focus:ring-[#FF77A5] focus:ring-opacity-50 transition-all">
+  <Button className="mt-4 w-full min-h-[44px] bg-header-cta dark:bg-header-cta-dark text-white rounded-[5px] font-semibold hover:opacity-90 focus:ring-2 focus:ring-[#FF77A5] focus:ring-opacity-50 transition-all">
           Contact us
         </Button>
       </div>

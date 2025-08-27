@@ -4,7 +4,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-white pt-16 pb-20 sm:pt-24 sm:pb-32"
+      className="relative overflow-hidden bg-white pt-16 pb-20 sm:pt-24 sm:pb-32 dark:bg-black"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
@@ -13,15 +13,15 @@ export function HeroSection() {
             <div className="max-w-2xl">
               <div className="mb-16">
                 {/* Headline */}
-                <h1 className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl 2xl:text-6xl font-light text-foreground leading-tight mb-6">
-                  Great <span className="text-highlight-software">software</span> is
+                <h1 className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl 2xl:text-6xl font-light text-foreground leading-tight mb-6 dark:text-white">
+                  Great <span className="text-highlight-software dark:text-accent-mint">software</span> is
                   <span className="block font-extrabold mt-2">
-                    built by great <span className="text-highlight-teams">teams</span>
+                    built by great <span className="text-highlight-teams dark:text-accent-mint">teams</span>
                   </span>
                 </h1>
 
                 {/* Description */}
-                <p className="text-lg sm:text-xl text-muted leading-relaxed max-w-2xl mb-10">
+                <p className="text-lg sm:text-xl text-muted leading-relaxed max-w-2xl mb-10 dark:text-white/80">
                   We help build and manage a team of world-class developers
                   <br />
                   to bring your vision to life
@@ -30,7 +30,7 @@ export function HeroSection() {
                 {/* Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4">
                   <button 
-                    className="min-h-[44px] px-8 py-3 rounded-md text-white text-sm font-semibold shadow-lg bg-brand-gradient hover:opacity-90 focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 focus:outline-none transition-all"
+                    className="min-h-[44px] px-8 py-3 rounded-md text-white text-sm font-semibold shadow-lg bg-brand-gradient dark:bg-mint-neon-gradient-dark hover:opacity-90 focus:ring-2 focus:ring-ring-dark focus:ring-opacity-50 focus:outline-none transition-all dark:text-white"
                     aria-label="Start your project with our team"
                   >
                     Let&apos;s get started!
@@ -38,7 +38,7 @@ export function HeroSection() {
 
                   {/* Secondary button can be optionally added */}
                   {/*
-                  <button className="border border-gray-300 text-muted hover:bg-gray-100 px-6 py-3 rounded-md text-sm font-medium">
+                  <button className="border border-gray-300 text-muted hover:bg-gray-100 px-6 py-3 rounded-md text-sm font-medium dark:border-gray-700 dark:text-white/80 dark:hover:bg-gray-900">
                     Learn More
                   </button>
                   */}

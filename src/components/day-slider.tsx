@@ -17,7 +17,7 @@ export default function DaysSlider({
   onValueChange={(value: number[]) => setDays(value[0])}
   aria-label="Project duration in days"
 >
-  <SliderPrimitive.Track className="relative h-2 w-full grow overflow-hidden rounded-full bg-gray-200">
+  <SliderPrimitive.Track className="relative h-2 w-full grow overflow-hidden rounded-full bg-footer-border dark:bg-brand-dark">
     <SliderPrimitive.Range className="absolute h-full bg-accent-mint" />
   </SliderPrimitive.Track>
 

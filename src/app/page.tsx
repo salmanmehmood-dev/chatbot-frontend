@@ -22,7 +22,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background text-foreground dark:bg-black dark:text-white">
       <Header />
       <main id="main-content" role="main">
         <HeroSection />

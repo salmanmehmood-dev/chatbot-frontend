@@ -63,19 +63,19 @@ export default function FeaturedResources() {
   });
 
   return (
-    <section className="py-20 px-4 sm:px-8 lg:px-16 bg-white mb-8">
+    <section className="py-20 px-4 sm:px-8 lg:px-16 bg-white mb-8 dark:bg-black">
       <div className="mx-auto">
-        <div className="mx-auto h-[0.4rem] w-20 bg-featured-gradient mb-8 rounded-full" />
+  <div className="mx-auto h-[0.4rem] w-20 bg-featured-gradient dark:bg-featured-gradient-dark mb-8 rounded-full" />
         <div className="text-center mb-24">
-          <h2 className="text-4xl text-featured-heading mb-4">Featured</h2>
-          <h3 className="text-4xl font-bold text-featured-title">Resources</h3>
+          <h2 className="text-4xl text-featured-heading mb-4 dark:text-accent-mint">Featured</h2>
+          <h3 className="text-4xl font-bold text-featured-title dark:text-white">Resources</h3>
         </div>
 
         <div ref={sliderRef} className="keen-slider">
           {resources.map((res, idx) => (
             <div
               key={idx}
-              className="keen-slider__slide bg-white p-6 rounded-lg min-w-[220px] max-w-[240px]"
+              className="keen-slider__slide bg-white p-6 rounded-lg min-w-[220px] max-w-[240px] dark:bg-gray-900 dark:text-white"
             >
               <div className="h-[180px] rounded-lg overflow-hidden mb-6">
                 <Image
@@ -88,7 +88,7 @@ export default function FeaturedResources() {
                   sizes="240px"
                 />
               </div>
-              <h4 className="text-md font-light text-featured-heading mb-6 leading-snug">
+              <h4 className="text-md font-light text-featured-heading mb-6 leading-snug dark:text-accent-mint">
                 {res.title}
               </h4>
               <a

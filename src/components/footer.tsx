@@ -1,6 +1,7 @@
+
 import Image from "next/image";
-import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
 import Link from "next/link";
+import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
 
 const socialLinks = [
   {
@@ -27,7 +28,7 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-footer-bg border-t border-footer-border text-sm text-footer-text">
+    <footer className="bg-footer-bg border-t border-footer-border text-sm text-footer-text dark:bg-black dark:border-gray-800 dark:text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Logo and Description */}
@@ -38,10 +39,10 @@ export function Footer() {
                 alt="Logo"
                 width={120}
                 height={40}
-                className="h-14 w-auto"
+                className="h-14 w-auto dark:invert"
               />
             </div>
-            <p className="mb-4">
+            <p className="mb-4 text-footer-text dark:text-white/80">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry.
             </p>
@@ -56,7 +57,7 @@ export function Footer() {
 
           {/* Links */}
           <div className="flex flex-col space-y-2">
-            <h4 className="font-semibold text-footer-link mb-2">Links</h4>
+            <h4 className="font-semibold text-footer-link mb-2 dark:text-accent-mint">Links</h4>
             {[
               "About Us",
               "Services",
@@ -69,7 +70,7 @@ export function Footer() {
               <a
                 key={label}
                 href="#"
-                className="hover:text-footer-link transition-colors"
+                className="hover:text-footer-link transition-colors dark:text-white/80 dark:hover:text-accent-mint"
               >
                 {label}
               </a>
@@ -78,23 +79,23 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold text-footer-link mb-2">Contact us</h4>
-            <p className="mb-2">
+            <h4 className="font-semibold text-footer-link mb-2 dark:text-accent-mint">Contact us</h4>
+            <p className="mb-2 text-footer-text dark:text-white/80">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry.
             </p>
-            <p className="text-footer-icon font-medium mb-4">+908 89097 890</p>
+            <p className="text-footer-icon font-medium mb-4 dark:text-accent-mint">+908 89097 890</p>
             <div className="flex space-x-3 justify-end mt-10">
               {socialLinks.map(({ name, Icon, href }, index) => (
                 <Link
                   key={index}
                   href={href}
                   aria-label={`Visit our ${name} page`}
-                  className="w-9 h-9 rounded-full shadow-md bg-white flex items-center justify-center hover:shadow-lg transition"
+                  className="w-9 h-9 rounded-full shadow-md bg-white flex items-center justify-center hover:shadow-lg transition dark:bg-black dark:border dark:border-gray-700 dark:hover:bg-accent-mint"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  <Icon className="w-4 h-4 text-footer-icon" />
+                  <Icon className="w-4 h-4 text-footer-icon dark:text-accent-mint" />
                 </Link>
               ))}
             </div>
@@ -102,10 +103,11 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-12 border-t pt-6 text-center text-xs text-footer-muted">
+        <div className="mt-12 border-t pt-6 text-center text-xs text-footer-muted dark:border-gray-700 dark:text-white/50">
           © 2023 Copyright by Agency Solutions. All rights reserved.
         </div>
       </div>
     </footer>
   );
 }
+

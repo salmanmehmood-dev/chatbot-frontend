@@ -41,12 +41,12 @@ const steps = [
 
 export default function DevelopmentProcess() {
   return (
-  <section className="py-16 px-4 max-w-7xl mx-auto relative">
+    <section className="py-16 px-4 max-w-7xl mx-auto relative bg-white dark:bg-black">
       {/* Heading */}
       <div className="text-center mb-28">
-        <div className="mx-auto h-[0.4rem] w-20 bg-brand-gradient mb-8 rounded-full" />
-        <h2 className="text-4xl text-section-heading mb-4">How development</h2>
-        <h3 className="text-4xl font-bold text-brand">
+  <div className="mx-auto h-[0.4rem] w-20 bg-brand-gradient dark:bg-brand-gradient-dark mb-8 rounded-full" />
+        <h2 className="text-4xl text-section-heading mb-4 dark:text-accent-mint">How development</h2>
+        <h3 className="text-4xl font-bold text-brand dark:text-white">
           through <span className="text-accent-mint font-semibold">ZaufLabs</span> works
         </h3>
       </div>
@@ -56,14 +56,14 @@ export default function DevelopmentProcess() {
         {steps.slice(0, 3).map((step, idx) => (
           <div
             key={idx}
-            className="md:max-w-[320px] relative md:right-3 z-10 p-6 bg-white rounded-lg shadow-sm border border-accent-mint text-left md:mb-8"
+            className="md:max-w-[320px] relative md:right-3 z-10 p-6 bg-white rounded-lg shadow-sm border border-accent-mint text-left md:mb-8 dark:bg-gray-900 dark:border-accent-mint dark:text-white"
           >
             <div className="absolute left-1/2 transform -translate-x-1/2 top-full w-[0.2rem] h-12 bg-accent-mint hidden md:block" />
-            <h4 className="text-lg font-bold text-brand mb-4">
+            <h4 className="text-lg font-bold text-brand mb-4 dark:text-accent-mint">
               {step.number}{' '}
               <span className="text-accent-mint">{step.title}</span>
             </h4>
-            <p className="text-muted text-sm">{step.description}</p>
+            <p className="text-muted text-sm dark:text-white/80">{step.description}</p>
           </div>
         ))}
 
@@ -95,14 +95,14 @@ export default function DevelopmentProcess() {
         {steps.slice(3, 6).map((step, idx) => (
           <div
             key={idx}
-            className="md:max-w-[320px] relative md:left-3 z-10 p-6 bg-white rounded-lg shadow-sm border border-accent-mint text-left"
+            className="md:max-w-[320px] relative md:left-3 z-10 p-6 bg-white rounded-lg shadow-sm border border-accent-mint text-left dark:bg-gray-900 dark:border-accent-mint dark:text-white"
           >
             <div className="absolute left-1/2 transform translate-x-10 bottom-full w-[0.2rem] h-10 bg-accent-mint hidden md:block" />
-            <h4 className="text-lg font-bold text-brand mb-4">
+            <h4 className="text-lg font-bold text-brand mb-4 dark:text-accent-mint">
               {step.number}{' '}
               <span className="text-accent-mint">{step.title}</span>
             </h4>
-            <p className="text-muted text-sm">{step.description}</p>
+            <p className="text-muted text-sm dark:text-white/80">{step.description}</p>
           </div>
         ))}
       </div>
