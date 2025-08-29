@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
@@ -37,9 +36,10 @@ export function Footer() {
               <Image
                 src="/logos/Logo.png"
                 alt="Logo"
-                width={120}
-                height={40}
-                className="h-14 w-auto dark:invert"
+                width={160}
+                height={48}
+                className="object-contain h-16 w-auto pt-4 dark:invert"
+                priority
               />
             </div>
             <p className="mb-4 text-footer-text dark:text-white/80">
@@ -57,7 +57,9 @@ export function Footer() {
 
           {/* Links */}
           <div className="flex flex-col space-y-2">
-            <h4 className="font-semibold text-footer-link mb-2 dark:text-accent-mint">Links</h4>
+            <h4 className="font-semibold text-footer-link mb-2 dark:text-accent-mint">
+              Links
+            </h4>
             {[
               "About Us",
               "Services",
@@ -79,12 +81,16 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold text-footer-link mb-2 dark:text-accent-mint">Contact us</h4>
+            <h4 className="font-semibold text-footer-link mb-2 dark:text-accent-mint">
+              Contact us
+            </h4>
             <p className="mb-2 text-footer-text dark:text-white/80">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry.
             </p>
-            <p className="text-footer-icon font-medium mb-4 dark:text-accent-mint">+908 89097 890</p>
+            <p className="text-footer-icon font-medium mb-4 dark:text-accent-mint">
+              +908 89097 890
+            </p>
             <div className="flex space-x-3 justify-end mt-10">
               {socialLinks.map(({ name, Icon, href }, index) => (
                 <Link
@@ -110,4 +116,3 @@ export function Footer() {
     </footer>
   );
 }
-

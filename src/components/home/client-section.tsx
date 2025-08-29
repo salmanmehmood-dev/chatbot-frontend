@@ -57,7 +57,7 @@ export function ClientsSection() {
         </div>
 
         {/* Carousel Controls */}
-        <div className="flex space-x-4 m-4 justify-end items-center">
+        <div className="flex space-x-4 m-4 justify-end items-center ">
           <button
             name="prev"
             aria-label="Previous"
@@ -70,7 +70,7 @@ export function ClientsSection() {
             name="next"
             aria-label="Next"
             onClick={() => instanceRef.current?.next()}
-            className="w-10 h-10 rounded-full bg-light-purpleBorder text-white hover:bg-light-purpleDark flex items-center justify-center transition dark:bg-accent-mint dark:text-black dark:hover:bg-accent-mint/80"
+            className="w-10 h-10 rounded-full bg-light-purpleBorder text-white hover:bg-light-purpleDark flex items-center justify-center transition dark:bg-accent-mint dark:text-black dark:hover:bg-accent-mint/80 max-w-4xl"
           >
             <ArrowRight size={16} className="dark:text-black" />
           </button>
@@ -78,9 +78,10 @@ export function ClientsSection() {
       </div>
 
       {/* Logo Slider */}
-      <div
+     <div className="flex justify-center">
+       <div
         ref={sliderRef}
-  className="keen-slider sm:h-50 md:h-56 lg:h-60 bg-light-lavender dark:bg-client-slider-gradient-dark rounded-lg p-6"
+  className="keen-slider sm:h-50 md:h-56 lg:h-60 max-w-7xl bg-light-lavender dark:bg-client-slider-gradient-dark rounded-lg p-6"
       >
         {logos.map((logo, idx) => (
           <div
@@ -100,6 +101,7 @@ export function ClientsSection() {
           </div>
         ))}
       </div>
+     </div>
     </section>
   );
 }

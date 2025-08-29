@@ -1,17 +1,17 @@
-import { Header } from "@/components/header";
-import { HeroSection } from "@/components/hero-section";
-import { ServicesSection } from "@/components/services-section";
-import { TrustSection } from "@/components/trust-section";
-import { Footer } from "@/components/footer";
-import { HireBanner } from "@/components/banner";
-import { DevelopmentApproachSection } from "@/components/development-approch-section";
-import { GreatSoftwareSection } from "@/components/great-software-section";
-import { ClientsSection } from "@/components/client-section";
-import { CaseStudySection } from "@/components/case-studies";
-import TestimonialsSection from "@/components/testimonials-section";
-import TechStackTabs from "@/components/tech-section";
-import DevelopmentProcess from "@/components/development-process-section";
-import FeaturedResources from "@/components/featured-resources-section";
+import { HireBanner } from "@/components/common/banner";
+import { Header } from "@/components/header/header";
+import { CaseStudySection } from "@/components/home/case-studies";
+import { ClientsSection } from "@/components/home/client-section";
+import { DevelopmentApproachSection } from "@/components/home/development-approch-section";
+import DevelopmentProcess from "@/components/home/development-process-section";
+import FeaturedResources from "@/components/home/featured-resources-section";
+import { Footer } from "@/components/home/footer";
+import { GreatSoftwareSection } from "@/components/home/great-software-section";
+import { HeroSection } from "@/components/home/hero-section";
+import { ServicesSection } from "@/components/home/services-section";
+import TechStackTabs from "@/components/home/tech-section";
+import TestimonialsSection from "@/components/home/testimonials-section";
+import { TrustSection } from "@/components/home/trust-section";
 
 
 export const metadata = {
@@ -29,7 +29,6 @@ export default function Home() {
         <ServicesSection />
         <TrustSection />
         <ClientsSection />
-        {/* <WorkSection /> */}
         <TestimonialsSection />
         <CaseStudySection />
         <GreatSoftwareSection />

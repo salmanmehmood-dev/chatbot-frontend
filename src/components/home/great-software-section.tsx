@@ -29,7 +29,7 @@ export function GreatSoftwareSection() {
         {/* Section Header */}
         <div className="text-center mb-28">
           <div className="mx-auto h-1.5 w-20 bg-brand-gradient dark:bg-brand-gradient-dark mb-8 rounded-full" />
-          <p className="text-section-subheading text-4xl sm:text-3xl mb-4 dark:text-accent-mint">Way of building</p>
+          <p className="text-section-subheading text-4xl sm:text-3xl mb-4 dark:text-accent-mint">Way of Building</p>
           <h2 className="text-4xl sm:text-3xl font-extrabold text-section-heading dark:text-white">Great Software</h2>
         </div>
 

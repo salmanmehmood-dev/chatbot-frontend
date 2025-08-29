@@ -9,8 +9,8 @@ export function TrustSection() {
         <div className="lg:w-[90%]">
           <div className="h-1.5 w-20 bg-brand-gradient dark:bg-brand-gradient-dark mb-8 rounded-full" />
           <h2 className="text-4xl sm:text-3xl xs:text-2xl font text-headline mb-8 leading-relaxed dark:text-accent-mint">
-            Leading companies trust us <br />
-            <span className="font-extrabold dark:text-white">to develop software</span>
+            Leading Companies Trust Us <br />
+            <span className="font-extrabold dark:text-white">to Develop Software</span>
           </h2>
           <p className="text-subtext text-left text-base sm:text-lg mb-6 leading-loose dark:text-white/80">
             We{" "}

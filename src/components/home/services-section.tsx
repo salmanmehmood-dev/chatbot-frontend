@@ -6,7 +6,7 @@ import "keen-slider/keen-slider.min.css";
 import { Card, CardContent } from "@/components/ui/card";
 import dynamic from "next/dynamic";
 
-const ServicesQuoteForm = dynamic(() => import("./services-quote-form"));
+const ServicesQuoteForm = dynamic(() => import("../common/services-quote-form"));
 
 
 const services = [
@@ -78,7 +78,7 @@ export function ServicesSection() {
         {/* Section Header */}
         <div className="text-center mb-28">
           <div className="mx-auto h-1.5 w-20 bg-brand-gradient dark:bg-brand-gradient-dark mb-8 rounded-full" />
-          <h2 className="text-4xl font-bold text-brand dark:text-accent-mint">Services we offer</h2>
+          <h2 className="text-4xl font-bold text-brand dark:text-accent-mint">Services We Offer</h2>
         </div>
 
         {/* Slider */}

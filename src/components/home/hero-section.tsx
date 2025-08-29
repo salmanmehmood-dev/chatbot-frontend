@@ -14,9 +14,9 @@ export function HeroSection() {
               <div className="mb-16">
                 {/* Headline */}
                 <h1 className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl 2xl:text-6xl font-light text-foreground leading-tight mb-6 dark:text-white">
-                  Great <span className="text-highlight-software dark:text-accent-mint">software</span> is
+                  Great <span className="text-highlight-software dark:text-accent-mint">Software</span> is
                   <span className="block font-extrabold mt-2">
-                    built by great <span className="text-highlight-teams dark:text-accent-mint">teams</span>
+                    Built by Great <span className="text-highlight-teams dark:text-accent-mint">Teams</span>
                   </span>
                 </h1>
 

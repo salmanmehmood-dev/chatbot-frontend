@@ -55,14 +55,14 @@ export function DevelopmentApproachSection() {
 
         {/* Section Header */}
         <div className="text-center mb-24">
-          <p className="text-4xl text-mutedForeground mb-4 dark:text-accent-mint">Our design and</p>
+          <p className="text-4xl text-mutedForeground mb-4 dark:text-accent-mint">Our Design and</p>
           <h2 className="text-4xl sm:text-4xl font-bold text-foreground dark:text-white">
-            development approach
+            Development Approach
           </h2>
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
           {features.map((item, idx) => (
             <div
               key={idx}

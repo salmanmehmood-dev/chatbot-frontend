@@ -2,9 +2,10 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import pricings from "@/data/pricings.json";
-import AmountRangeSelector from "@/components/amount-range-selector";
-import { CheckboxBox } from "@/components/check-box";
-import DaysSlider from "@/components/day-slider";
+import { CheckboxBox } from "./check-box";
+import DaysSlider from "./day-slider";
+import AmountRangeSelector from "./amount-range-selector";
+
 
 const SERVICES = [
   {
@@ -226,7 +227,7 @@ const ServicesQuoteForm: React.FC = () => {
         </div>
 
         {/* Submit Button */}
-        <div className="flex justify-end pt-4">
+        <div className="flex justify-end pt-4" >
           <Button
             className="min-w-[200px] min-h-[44px] px-8 py-3 text-white bg-brand-gradient hover:opacity-90 focus:ring-2 focus:ring-accent-mint focus:ring-opacity-50 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed transition-all dark:bg-accent-mint dark:hover:bg-white dark:hover:text-brand"
             type="submit"

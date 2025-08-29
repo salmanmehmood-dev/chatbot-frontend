@@ -80,7 +80,5 @@ html {
   .text-brand-gradient {
     @apply text-transparent bg-clip-text bg-brand-gradient;
   }
-  /* Use Tailwind's bg-brand-gradient, bg-featured-gradient, etc. for backgrounds. */
-  /* Add more utility classes in tailwind.config.ts if needed. */
-  /* High contrast and reduced motion support can be added as needed, using Tailwind classes. */
+  
 }

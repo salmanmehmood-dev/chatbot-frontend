@@ -111,10 +111,10 @@ export default function TestimonialsSection() {
         <div className="max-w-3xl mx-auto px-4">
           <div className="mx-auto h-1.5 w-20 bg-brand-gradient dark:bg-brand-gradient-dark mb-8 rounded-full" />
           <div className="text-4xl mb-4 inline-block pb-1">
-            Why customers love
+            Why Customers Love
           </div>
           <h2 className="text-4xl sm:text-3xl font-bold text-foreground mb-20 dark:text-accent-mint">
-            working with us
+            Working With Us
           </h2>
           <p className="text-muted max-w-xl mx-auto mb-18 dark:text-white/80">
             {testimonials[0].content}

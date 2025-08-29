@@ -45,9 +45,9 @@ export default function DevelopmentProcess() {
       {/* Heading */}
       <div className="text-center mb-28">
   <div className="mx-auto h-[0.4rem] w-20 bg-brand-gradient dark:bg-brand-gradient-dark mb-8 rounded-full" />
-        <h2 className="text-4xl text-section-heading mb-4 dark:text-accent-mint">How development</h2>
+        <h2 className="text-4xl text-section-heading mb-4 dark:text-accent-mint">How Development</h2>
         <h3 className="text-4xl font-bold text-brand dark:text-white">
-          through <span className="text-accent-mint font-semibold">ZaufLabs</span> works
+          Through <span className="text-accent-mint font-semibold">ZaufLabs</span> Works
         </h3>
       </div>
 

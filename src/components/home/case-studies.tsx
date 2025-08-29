@@ -30,9 +30,9 @@ export function CaseStudySection() {
 
         {/* Header */}
         <div className="text-center mb-28">
-          <h2 className="text-4xl text-mutedForeground mb-4 dark:text-accent-mint">Our recent</h2>
+          <h2 className="text-4xl text-mutedForeground mb-4 dark:text-accent-mint">Our Recent</h2>
           <h1 className="text-4xl sm:text-4xl font-bold text-foreground dark:text-white">
-            Case studies
+            Case Studies
           </h1>
         </div>
 

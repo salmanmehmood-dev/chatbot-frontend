@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 // Dark mode toggle logic
 function useDarkMode() {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
   useEffect(() => {
     if (typeof window !== "undefined") {
       const root = window.document.documentElement;
@@ -31,7 +31,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-header-background border-b border-header-border shadow-nav dark:bg-black dark:border-gray-800">
-      <div className="mx-auto px-6 sm:px-8 lg:px-12 py-1">
+      <div className="mx-auto px-6 sm:px-8 lg:px-12 py-1 max-w-[1600px]">
         <div className="flex h-[59px] items-center justify-between ">
           {/* Logo */}
           <div className="flex items-center space-x-3 h-full">

@@ -33,7 +33,7 @@ const resources = [
 ];
 
 export default function FeaturedResources() {
-  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
+  const [sliderRef] = useKeenSlider<HTMLDivElement>({
     loop: true,
     mode: "free-snap",
     slides: {
@@ -63,8 +63,8 @@ export default function FeaturedResources() {
   });
 
   return (
-    <section className="py-20 px-4 sm:px-8 lg:px-16 bg-white mb-8 dark:bg-black">
-      <div className="mx-auto">
+    <section className="py-20 px-4 sm:px-8 lg:px-16 bg-white mb-8 dark:bg-black ">
+      <div className="mx-auto max-w-7xl">
   <div className="mx-auto h-[0.4rem] w-20 bg-featured-gradient dark:bg-featured-gradient-dark mb-8 rounded-full" />
         <div className="text-center mb-24">
           <h2 className="text-4xl text-featured-heading mb-4 dark:text-accent-mint">Featured</h2>
