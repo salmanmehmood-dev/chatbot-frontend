@@ -97,11 +97,11 @@ export function Footer() {
                   key={index}
                   href={href}
                   aria-label={`Visit our ${name} page`}
-                  className="w-9 h-9 rounded-full shadow-md bg-white flex items-center justify-center hover:shadow-lg transition dark:bg-black dark:border dark:border-gray-700 dark:hover:bg-accent-mint"
+                  className="w-9 h-9 rounded-full group shadow-md bg-white flex items-center justify-center hover:shadow-lg transition dark:bg-black dark:border dark:border-gray-700 dark:hover:bg-accent-mint dark:hover:text-white"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  <Icon className="w-4 h-4 text-footer-icon dark:text-accent-mint" />
+                  <Icon className="w-4 h-4 text-footer-icon dark:text-accent-mint dark:group-hover:text-white" />
                 </Link>
               ))}
             </div>

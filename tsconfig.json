@@ -30,7 +30,12 @@
         "./src/payload.config.ts"
       ]
     },
-    "target": "ES2017"
+    "target": "ES2017",
+    "types": [
+      "react",
+      "react-dom",
+      "next"
+    ]
   },
   "include": [
     "next-env.d.ts",

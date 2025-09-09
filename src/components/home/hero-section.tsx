@@ -10,7 +10,7 @@ export function HeroSection() {
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-x-12 items-center">
             {/* Left Content */}
-            <div className="max-w-2xl">
+            <div className="max-w-3xl">
               <div className="mb-16">
                 {/* Headline */}
                 <h1 className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl 2xl:text-6xl font-light text-foreground leading-tight mb-6 dark:text-white">
@@ -22,9 +22,9 @@ export function HeroSection() {
 
                 {/* Description */}
                 <p className="text-lg sm:text-xl text-muted leading-relaxed max-w-2xl mb-10 dark:text-white/80">
-                  We help build and manage a team of world-class developers
+                  Our goal then and now is to provide quality full stack 
                   <br />
-                  to bring your vision to life
+                 software development services because you worth it.
                 </p>
 
                 {/* Buttons */}

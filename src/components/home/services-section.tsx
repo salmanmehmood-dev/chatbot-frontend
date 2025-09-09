@@ -11,33 +11,27 @@ const ServicesQuoteForm = dynamic(() => import("../common/services-quote-form"))
 
 const services = [
   {
-    title: "Web Design & Development",
+    title: "Frontend",
     description:
-      "A Website is an extension of yourself and we can help you to express it properly. Your website is your number one marketing asset because we live in a digital age.",
+      "Create captivating user interfaces. Our frontend solutions ensure an engaging browsing experience, allowing your users to effortlessly navigate and interact with your website.",
     icon: "💻",
   },
   {
     title: "Mobile App Development",
     description:
-      "A Website is an extension of yourself and we can help you to express it properly. Your website is your number one marketing asset because we live in a digital age.",
+      "Transform your ideas into intuitive and high-performing mobile applications. Our app development services offer customized solutions tailored to your specific needs.",
     icon: "📱",
   },
   {
-    title: "Software Testing Service",
+    title: "Backend",
     description:
-      "A Website is an extension of yourself and we can help you to express it properly. Your website is your number one marketing asset because we live in a digital age.",
+      "Build a solid foundation for your applications with our robust backend infrastructure. Our expert team develops scalable solutions that enable optimal performance for your business.",
     icon: "🧪",
   },
   {
-    title: "E-commerce Solutions",
+    title: "Blockchain",
     description:
-      "Complete online store solutions with secure payment and inventory management.",
-    icon: "🛒",
-  },
-  {
-    title: "E-commerce Solutions",
-    description:
-      "Complete online store solutions with secure payment and inventory management.",
+      "Experience secure and transparent transactions leveraging the power of blockchain technology. Our blockchain solutions provide a decentralized and tamper-proof environment",
     icon: "🛒",
   },
 ];

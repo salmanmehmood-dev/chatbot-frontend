@@ -2,6 +2,7 @@ import { HireBanner } from "@/components/common/banner";
 import { Header } from "@/components/header/header";
 import { CaseStudySection } from "@/components/home/case-studies";
 import { ClientsSection } from "@/components/home/client-section";
+import { ContactSection } from "@/components/home/contact-us";
 import { DevelopmentApproachSection } from "@/components/home/development-approch-section";
 import DevelopmentProcess from "@/components/home/development-process-section";
 import FeaturedResources from "@/components/home/featured-resources-section";
@@ -36,6 +37,7 @@ export default function Home() {
         <TechStackTabs />
         <DevelopmentProcess />
         <FeaturedResources />
+        <ContactSection />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-24">
           <HireBanner />
         </div>
