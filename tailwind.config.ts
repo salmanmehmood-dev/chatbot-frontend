@@ -21,8 +21,6 @@
  * For each color group below, see comments for where it is used.
  */
 
-import { link } from "fs";
-import { LucideNotebookText } from "lucide-react";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
