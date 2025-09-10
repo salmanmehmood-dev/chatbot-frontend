@@ -58,10 +58,10 @@ export default function HireDeveloperForm() {
     <section id="hire-developer" className="py-20 bg-white dark:bg-black flex justify-center">
       <div className="w-[90%] max-w-[1700px]  ">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-foreground dark:text-white mb-4">
+          <h2 className="md:text-4xl sm:text-3xl text-2xl  font-bold text-foreground dark:text-white mb-4">
             Hire Top Developers
           </h2>
-          <p className="text-mutedForeground dark:text-white/70 max-w-2xl mx-auto">
+          <p className="text-mutedForeground dark:text-white/70 max-w-2xl mx-auto sm:text-base text-sm">
             Looking for skilled developers to bring your idea to life? Fill out the form below and
             we’ll connect you with the right talent for your project.
           </p>
