@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useState, useEffect } from "react";
@@ -5,8 +6,18 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useKeenSlider } from "keen-slider/react";
 
-const testimonials = [
+interface Testimonial {
+  id: number;
+  name: string;
+  role: string;
+  avatar: string;
+  content: string;
+  rating: number;
+}
+
+const testimonials: Testimonial[] = [
   {
+    id:1,
     name: "Sarah Johnson",
     role: "CEO, TechStart Inc.",
     avatar: "https://xsgames.co/randomusers/avatar.php?g=female",
@@ -15,6 +26,7 @@ const testimonials = [
     rating: 5,
   },
   {
+    id:2,
     name: "Michael Chen",
     role: "Product Manager, InnovateNow",
     avatar: "https://xsgames.co/randomusers/avatar.php?g=male",
@@ -22,6 +34,7 @@ const testimonials = [
     rating: 5,
   },
   {
+    id: 3,
     name: "Emily Rodriguez",
     role: "Marketing Director, GrowthCo",
     avatar: "https://xsgames.co/randomusers/avatar.php?g=female",
@@ -29,6 +42,7 @@ const testimonials = [
     rating: 5,
   },
   {
+    id: 4,
     name: "David Thompson",
     role: "Founder, StartupXYZ",
     avatar: "https://xsgames.co/randomusers/avatar.php?g=male",
@@ -36,6 +50,7 @@ const testimonials = [
     rating: 5,
   },
   {
+    id: 5,
     name: "Lisa Wang",
     role: "CTO, DevCorp",
     avatar: "https://xsgames.co/randomusers/avatar.php?g=female",
@@ -45,14 +60,49 @@ const testimonials = [
   },
 ];
 
+
+function Autoplay(slider: any, interval = 2000) {
+  let timeout: ReturnType<typeof setTimeout>;
+  let mouseOver = false;
+
+  function clearNextTimeout() {
+    clearTimeout(timeout);
+  }
+
+  function nextTimeout() {
+    clearTimeout(timeout);
+    if (mouseOver) return;
+    timeout = setTimeout(() => {
+      slider.next();
+    }, interval);
+  }
+
+  slider.on("created", () => {
+    slider.container.addEventListener("mouseover", () => {
+      mouseOver = true;
+      clearNextTimeout();
+    });
+    slider.container.addEventListener("mouseout", () => {
+      mouseOver = false;
+      nextTimeout();
+    });
+    nextTimeout();
+  });
+  slider.on("dragStarted", clearNextTimeout);
+  slider.on("animationEnded", nextTimeout);
+  slider.on("updated", nextTimeout);
+}
+
+
 export default function TestimonialsSection() {
   const [activeIndex, setActiveIndex] = useState(0); // Start with 0 instead of 2
   const [mounted, setMounted] = useState(false); // Track if component is mounted
 
-  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
+  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
+  {
     loop: true,
     mode: "snap",
-    initial: 0, // Start with first slide initially
+    initial: 0,
     slides: {
       perView: 5,
       spacing: 10,
@@ -71,7 +121,6 @@ export default function TestimonialsSection() {
       setActiveIndex(slider.track.details.rel);
     },
     created(slider) {
-      // Move to middle slide after slider is created and component is mounted
       if (mounted) {
         setTimeout(() => {
           slider.moveToIdx(2);
@@ -79,7 +128,10 @@ export default function TestimonialsSection() {
         }, 100);
       }
     },
-  });
+  },
+  [Autoplay] 
+);
+
 
   // Handle mounting to avoid hydration issues
   useEffect(() => {
@@ -169,7 +221,7 @@ export default function TestimonialsSection() {
           const isActive = index === activeIndex;
           return (
             <div
-              key={index}
+              key={testimonial.id}
               className="keen-slider__slide flex flex-col items-center cursor-pointer"
               onClick={() => instanceRef.current?.moveToIdx(index)}
               style={{

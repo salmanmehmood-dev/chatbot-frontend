@@ -63,7 +63,7 @@ export default function FeaturedResources() {
   });
 
   return (
-    <section className="py-20 px-4 sm:px-8 lg:px-16 bg-white mb-8 dark:bg-black ">
+    <section id="blog" className="py-20 px-4 sm:px-8 lg:px-16 bg-white mb-8 dark:bg-black ">
       <div className="mx-auto max-w-7xl">
   <div className="mx-auto h-[0.4rem] w-20 bg-featured-gradient dark:bg-featured-gradient-dark mb-8 rounded-full" />
         <div className="text-center mb-24">

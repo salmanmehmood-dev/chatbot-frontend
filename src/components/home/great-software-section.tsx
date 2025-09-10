@@ -3,27 +3,39 @@ import Image from "next/image";
 const items = [
   {
     image: "/software-image1.png",
-    quote: "Simform is quick to identify larger problem with the Software so we decided to expand our scope to build new modules",
-    name: "Jeewa markram",
-    role: "CEO",
+    title: "Build the Right Team to Scale",
+    desc: "Finding the right talent is never easy. We help you assemble teams that align with your culture, follow your processes, and stay long-term.",
+    extra: "Our delivery model helps you cut costs and deliver within budget.",
+    quote:
+      "Simform quickly understood our needs and built a dedicated team that scaled with us seamlessly.",
+    name: "Jeewa Markram",
+    role: "CEO, TechNova",
   },
   {
     image: "/software-image2.png",
-    quote: "Simform is quick to identify larger problem with the Software so we decided to expand our scope to build new modules",
-    name: "Jeewa markram",
-    role: "CEO",
+    title: "Accelerate Product Development",
+    desc: "Speed is critical in today’s market. Our agile approach ensures faster releases without compromising on quality or user experience.",
+    extra: "We integrate with your workflows to deliver on time, every time.",
+    quote:
+      "Their agile process reduced our time-to-market by half while keeping quality intact.",
+    name: "Aisha Khan",
+    role: "Product Head, FinEdge",
   },
   {
     image: "/software-image3.png",
-    quote: "Simform is quick to identify larger problem with the Software so we decided to expand our scope to build new modules",
-    name: "Jeewa markram",
-    role: "CEO",
+    title: "Ensure Long-Term Reliability",
+    desc: "Great software isn’t just about launch—it’s about stability and growth. We provide ongoing support, updates, and performance monitoring.",
+    extra: "Your product evolves with your business, not against it.",
+    quote:
+      "Their support and reliability gave us the confidence to scale globally without downtime.",
+    name: "Lucas Pereira",
+    role: "CTO, HealthSync",
   },
 ];
 
 export function GreatSoftwareSection() {
   return (
-    <section id="blog" className="py-24 sm:py-32 bg-section-background dark:bg-black">
+    <section id="aboutus" className="py-24 sm:py-32 bg-section-background dark:bg-black">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
@@ -44,16 +56,14 @@ export function GreatSoftwareSection() {
               >
                 {/* Text Content */}
                 <div className="w-full lg:w-1/2">
-                  <h3 className="text-2xl font-semibold text-section-heading mb-10 dark:text-accent-mint">Build the right team to scale</h3>
+                  <h3 className="text-2xl font-semibold text-section-heading mb-10 dark:text-accent-mint">{item.title}</h3>
                   <p className="text-section-body mb-10 dark:text-white/80">
-                    Finding the right talent is not easy. We help you find the talent that suits your needs, follows your processes, and sticks with you long term (not the case with freelancers)
+                    {item.desc}
                   </p>
-                  <p className="text-sm font-medium mb-6 dark:text-white/80">
-                    Our{" "}
-                    <a href="#" className="text-transparent bg-clip-text bg-text-gradient dark:bg-text-gradient-dark">
-                      delivery model
-                    </a>{" "}
-                    helps you cut costs and deliver within budget.
+                   <p className="text-sm font-medium mb-10">
+                    <span className="bg-clip-text text-transparent bg-text-gradient dark:bg-text-gradient-dark animate-pulse">
+                      {item.extra}
+                    </span>
                   </p>
                   <blockquote className="border-l-4 pl-4 border-section-quote text-sm italic text-transparent bg-clip-text bg-text-gradient dark:bg-text-gradient-dark mb-6 dark:border-accent-mint dark:text-white/70">
                     “{item.quote}”

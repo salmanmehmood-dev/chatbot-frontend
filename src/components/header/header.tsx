@@ -75,7 +75,7 @@ export function Header() {
               )}
             </button>
             <Button className="min-h-[44px] px-6 py-3 rounded-[5px] bg-header-cta dark:bg-header-cta-dark text-white text-sm font-semibold transition-all hover:opacity-90 focus:ring-2 focus:ring-[#FF77A5] focus:ring-opacity-50 focus:outline-none">
-              Contact us
+              <Link href="#contact">Contact us</Link>
             </Button>
           </div>
 

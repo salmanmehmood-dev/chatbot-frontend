@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export function HeroSection() {
   return (
@@ -29,12 +30,14 @@ export function HeroSection() {
 
                 {/* Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button 
+                  <Link href="/hire-developer">
+                     <button 
                     className="min-h-[44px] px-8 py-3 rounded-md text-white text-sm font-semibold shadow-lg bg-brand-gradient dark:bg-mint-neon-gradient-dark hover:opacity-90 focus:ring-2 focus:ring-ring-dark focus:ring-opacity-50 focus:outline-none transition-all dark:text-white"
                     aria-label="Start your project with our team"
                   >
                     Let&apos;s get started!
                   </button>
+                  </Link>
 
                   {/* Secondary button can be optionally added */}
                   {/*
