@@ -43,8 +43,9 @@ export function Footer() {
               />
             </div>
             <p className="mb-4 text-footer-text dark:text-white/80">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
+              We are a digital solutions company helping businesses design,
+              build, and scale world-class products. From UX design to
+              engineering, we bring ideas to life.
             </p>
             <Image
               src="/logos/googleLogo.png"
@@ -85,8 +86,8 @@ export function Footer() {
               Contact us
             </h4>
             <p className="mb-2 text-footer-text dark:text-white/80">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
+               Have a project in mind or need expert guidance? Let’s talk and
+              explore how we can build solutions together.
             </p>
             <p className="text-footer-icon font-medium mb-4 dark:text-accent-mint">
               +908 89097 890

@@ -55,7 +55,7 @@ export default function HireDeveloperForm() {
   }
 
   return (
-    <section id="hire-developer" className="py-20 bg-white dark:bg-black flex justify-center">
+    <section id="hire" className="py-20 bg-white dark:bg-black flex justify-center">
       <div className="w-[90%] max-w-[1700px]  ">
         <div className="text-center mb-12">
           <h2 className="md:text-4xl sm:text-3xl text-2xl  font-bold text-foreground dark:text-white mb-4">

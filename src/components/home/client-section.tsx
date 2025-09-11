@@ -1,8 +1,6 @@
 "use client";
 
-import { useKeenSlider } from "keen-slider/react";
-import "keen-slider/keen-slider.min.css";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+//import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 const logos = [
@@ -15,29 +13,6 @@ const logos = [
 ];
 
 export function ClientsSection() {
-  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
-    loop: true,
-    mode: "free-snap",
-    slides: {
-      perView: 4,
-      spacing: 24,
-    },
-    breakpoints: {
-      "(max-width: 1024px)": {
-        slides: {
-          perView: 3,
-          spacing: 16,
-        },
-      },
-      "(max-width: 640px)": {
-        slides: {
-          perView: 2,
-          spacing: 12,
-        },
-      },
-    },
-  });
-
   return (
     <section className="py-20 px-4 sm:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto">
@@ -56,12 +31,11 @@ export function ClientsSection() {
           </div>
         </div>
 
-        {/* Carousel Controls */}
-        <div className="flex space-x-4 m-4 justify-end items-center ">
+        {/* Carousel Controls (can keep or remove) */}
+        {/* <div className="flex space-x-4 m-4 justify-end items-center">
           <button
             name="prev"
             aria-label="Previous"
-            onClick={() => instanceRef.current?.prev()}
             className="w-10 h-10 rounded-full border border-light-purpleBorder text-light-purpleBorder hover:bg-light-purpleHover flex items-center justify-center transition dark:border-accent-mint dark:text-accent-mint dark:hover:bg-accent-mint/20"
           >
             <ArrowLeft size={16} className="dark:text-accent-mint" />
@@ -69,39 +43,37 @@ export function ClientsSection() {
           <button
             name="next"
             aria-label="Next"
-            onClick={() => instanceRef.current?.next()}
             className="w-10 h-10 rounded-full bg-light-purpleBorder text-white hover:bg-light-purpleDark flex items-center justify-center transition dark:bg-accent-mint dark:text-black dark:hover:bg-accent-mint/80 max-w-4xl"
           >
             <ArrowRight size={16} className="dark:text-black" />
           </button>
-        </div>
+        </div> */}
       </div>
 
-      {/* Logo Slider */}
-     <div className="flex justify-center">
-       <div
-        ref={sliderRef}
-  className="keen-slider sm:h-50 md:h-56 lg:h-60 max-w-7xl bg-light-lavender dark:bg-client-slider-gradient-dark rounded-lg p-6"
-      >
-        {logos.map((logo, idx) => (
-          <div
-            key={idx}
-            className="keen-slider__slide flex flex-col justify-center items-center p-4"
-          >
-            <Image
-              src={logo.src}
-              width={200}
-              height={100}
-              alt={logo.name}
-              title={logo.name}
-              draggable={false}
-              loading="lazy"
-              className="object-contain h-20 sm:h-24"
-            />
+      {/* Marquee Logo Slider */}
+      <div className="flex justify-center">
+        <div className="marquee sm:h-50 md:h-56 lg:h-60 h-30 max-w-7xl bg-light-lavender dark:bg-client-slider-gradient-dark rounded-lg p-6">
+          <div className="marquee-track">
+            {[...logos, ...logos].map((logo, idx) => (
+              <div
+                key={idx}
+                className="flex flex-col gap-12 justify-center items-center sm:p-24 p-10"
+              >
+                <Image
+                  src={logo.src}
+                  width={200}
+                  height={100}
+                  alt={logo.name}
+                  title={logo.name}
+                  draggable={false}
+                  loading="lazy"
+                  className="max-w-[150px] lg:w-[150px] w-[130px] transition-transform duration-300 hover:scale-125 hover:-translate-y-2"
+                />
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
-     </div>
     </section>
   );
 }

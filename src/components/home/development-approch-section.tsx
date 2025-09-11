@@ -12,39 +12,40 @@ const features = [
     icon: <Code className="w-6 h-6 text-white" />,
     bg: "bg-gray-800",
     title: "UX Driven Engineering",
-    desc: "Unlike other companies, we are a UX first development company. Projects are driven by designers and they make sure design and experiences translate to code.",
+    desc: "Our development starts with user experience in mind. Designers lead the process to ensure every feature feels natural and intuitive.",
   },
   {
     icon: <Users className="w-6 h-6 text-white" />,
     bg: "bg-blue-400",
     title: "Developing Shared Understanding",
-    desc: "Unlike other companies, we are a UX first development company. Projects are driven by designers and they make sure design and experiences translate to code.",
+    desc: "We align teams, stakeholders, and developers early on. Clear communication ensures everyone moves in the same direction.",
   },
   {
     icon: <Wand2 className="w-6 h-6 text-white" />,
     bg: "bg-accent",
     title: "Proven Experience and Expertise",
-    desc: "Unlike other companies, we are a UX first development company. Projects are driven by designers and they make sure design and experiences translate to code.",
+    desc: "With years of cross-industry experience, our experts apply best practices and deliver solutions that scale with your business.",
   },
   {
     icon: <ShieldCheck className="w-6 h-6 text-white" />,
     bg: "bg-teal-400",
     title: "Security & Intellectual Property (IP)",
-    desc: "Unlike other companies, we are a UX first development company. Projects are driven by designers and they make sure design and experiences translate to code.",
+    desc: "We prioritize data protection and safeguard your IP with secure coding, compliance checks, and confidentiality at every stage.",
   },
   {
     icon: <CheckCircle className="w-6 h-6 text-white" />,
     bg: "bg-yellow-400",
     title: "Code Reviews",
-    desc: "Unlike other companies, we are a UX first development company. Projects are driven by designers and they make sure design and experiences translate to code.",
+    desc: "Every line of code is peer-reviewed to maintain quality, reduce bugs, and ensure consistency across the project.",
   },
   {
     icon: <Bug className="w-6 h-6 text-white" />,
     bg: "bg-brand-dark",
     title: "Quality Assurance & Testing",
-    desc: "Unlike other companies, we are a UX first development company. Projects are driven by designers and they make sure design and experiences translate to code.",
+    desc: "We run rigorous testing—manual and automated—to guarantee stable, reliable, and high-performance applications.",
   },
 ];
+
 
 export function DevelopmentApproachSection() {
   return (

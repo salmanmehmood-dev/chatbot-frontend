@@ -41,7 +41,7 @@ const steps = [
 
 export default function DevelopmentProcess() {
   return (
-    <section className="py-16 px-4 max-w-7xl mx-auto relative bg-white dark:bg-black">
+    <section id='howitworks' className="py-16 px-4 max-w-7xl mx-auto relative bg-white dark:bg-black">
       {/* Heading */}
       <div className="text-center mb-28">
   <div className="mx-auto h-[0.4rem] w-20 bg-brand-gradient dark:bg-brand-gradient-dark mb-8 rounded-full" />
