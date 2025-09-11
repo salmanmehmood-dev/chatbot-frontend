@@ -1,6 +1,10 @@
+"use client"
+
+
 import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import { useDarkMode } from "@/context/DarkModeContext";
 
 const socialLinks = [
   {
@@ -26,6 +30,7 @@ const socialLinks = [
 ];
 
 export function Footer() {
+  const { isDark } = useDarkMode();
   return (
     <footer className="bg-footer-bg border-t border-footer-border text-sm text-footer-text dark:bg-black dark:border-gray-800 dark:text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -33,14 +38,27 @@ export function Footer() {
           {/* Logo and Description */}
           <div>
             <div className="flex mb-4">
-              <Image
-                src="/logos/Logo.png"
-                alt="Logo"
-                width={160}
-                height={48}
-                className="object-contain h-16 w-auto pt-4 dark:invert"
-                priority
-              />
+              <Link href="/" className="flex items-center space-x-2 h-full">
+              {isDark ? (
+                <Image
+                  src="/logos/logo2.png" 
+                  alt="Logo Dark"
+                  width={160}
+                  height={48}
+                  className="object-contain h-20 w-auto pt-2"
+                  priority
+                />
+              ) : (
+                <Image
+                  src="/logos/Logo.png" 
+                  alt="Logo Light"
+                  width={160}
+                  height={48}
+                  className="object-contain h-16 w-auto pt-4"
+                  priority
+                />
+              )}
+            </Link>
             </div>
             <p className="mb-4 text-footer-text dark:text-white/80">
               We are a digital solutions company helping businesses design,

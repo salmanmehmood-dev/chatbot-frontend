@@ -71,7 +71,7 @@ export const projects = [
     title: "Nymbl",
     type: "website",
     category: "FinTech",
-    image: "/projects/nymbl.png",
+    image: "/projects/011.png",
     link: "https://www.benymbl.co/",
     description: "A fintech solution that simplifies business payments and financial workflows.",
     overview: "Nymbl is a fintech web application built to help businesses streamline their financial transactions. With features like automated invoicing, transaction history, and real-time analytics, Nymbl reduces friction in business finance. The platform focuses on making payments faster, more secure, and cost-efficient for growing businesses across different sectors.",
@@ -93,7 +93,7 @@ export const projects = [
     title: "Happy Tourist Center",
     type: "website",
     category: "Tourism",
-    image: "/projects/happytourist.png",
+    image: "/projects/03.png",
     link: "https://happytouristcenter.com/",
     description: "A tourism platform connecting travelers with curated experiences and services.",
     overview: "Happy Tourist Center provides an all-in-one solution for travelers looking for curated tourism packages. The website integrates hotel booking, guided tours, and travel assistance into one platform. By combining modern UI with a user-first design, the platform ensures seamless travel planning for tourists worldwide.",
@@ -197,7 +197,7 @@ export const projects = [
     title: "Washmen",
     type: "mobile",
     category: "Lifestyle",
-    image: "/projects/washmen.png",
+    image: "/projects/02.png",
     link: "https://apps.apple.com/pk/app/washmen-laundry-dry-cleaning/id1037965236",
     description: "A laundry and dry-cleaning app providing on-demand pickup and delivery.",
     overview: "Washmen is a mobile-first lifestyle service app that takes the hassle out of laundry. Users can schedule pickups, track progress, and enjoy doorstep delivery of clean clothes. The app is designed for convenience, reliability, and affordability, ensuring users save time on daily chores.",
@@ -230,5 +230,93 @@ export const projects = [
       "Enhance brand loyalty with convenience"
     ],
     techStack: ["React Native", "Node.js", "MongoDB", "Firebase"]
+  },
+  {
+    id: 12,
+    projectId: "aeu-gaming",
+    title: "Amateur Esports Union ",
+    type: "website",
+    category: "Esports & Tournaments",
+    image: "/projects/sports.png",
+    link: "https://amateur-esports-union.vercel.app/",
+    description: "A platform for organizers, publishers, and sponsors to run engaging esports tournaments with prize boosts.",
+    overview: "AEU Gaming gives organizers, publishers, and sponsors everything they need to run engaging, prize-boosted tournaments—without the hassle. The platform streamlines the process of hosting competitions, managing participants, and offering rewards, making esports more accessible and exciting for communities worldwide.",
+    problems: [
+      "Difficulty in organizing transparent esports tournaments",
+      "Limited tools for sponsors and publishers",
+      "High operational overhead in managing players and rewards"
+    ],
+    goals: [
+      "Provide a one-stop solution for esports tournament hosting",
+      "Empower sponsors and publishers to engage communities",
+      "Ensure smooth management of participants and prize pools"
+    ],
+    techStack: ["Next.js", "Tailwind", "Node.js", "Firebase"]
+  },
+  {
+    id: 13,
+    projectId: "oppswell",
+    title: "OppsWell",
+    type: "website",
+    category: "B2B Networking",
+    image: "/projects/oppswell.png",
+    link: "https://oppswell.com/",
+    description: "A global B2B networking platform that facilitates seamless procurement and supplier connections.",
+    overview: "OppsWell is designed to bypass intermediaries for seamless B2B transactions. The platform merges procurement needs with a robust business social network, enabling direct connections between buyers and suppliers. It empowers businesses to streamline supply chain processes while reducing costs and building trust through direct networking.",
+    problems: [
+      "Dependence on intermediaries increases costs",
+      "Inefficient procurement and supplier discovery",
+      "Fragmented global B2B networking solutions"
+    ],
+    goals: [
+      "Eliminate unnecessary intermediaries in B2B transactions",
+      "Connect buyers and suppliers directly",
+      "Provide a trusted, global-scale networking solution"
+    ],
+    techStack: ["Next.js", "Tailwind", "Node.js", "MongoDB"]
+  },
+  {
+    id: 14,
+    projectId: "pet-guardy",
+    title: "Pet Guardy",
+    type: "website",
+    category: "Pet Care",
+    image: "/projects/pet.png",
+    link: "https://petguardy.com/",
+    description: "A digital solution to ensure pets are cared for when their owners are away.",
+    overview: "Pet Guardy ensures your pets are cared for even when you can't return home. Users can set up emergency contacts, feeding schedules, and care instructions to ensure peace of mind. The platform is built to protect pets by providing structured routines and backup care solutions.",
+    problems: [
+      "Pet owners worry about leaving pets alone",
+      "No structured system for emergency care",
+      "Difficulty managing feeding and care schedules remotely"
+    ],
+    goals: [
+      "Ensure pets receive consistent care when owners are away",
+      "Provide tools for emergency contacts and backup caregivers",
+      "Simplify pet management with digital scheduling and instructions"
+    ],
+    techStack: ["Next.js", "Tailwind", "Node.js", "Firebase"]
+  },
+  {
+    id: 15,
+    projectId: "hotel-point",
+    title: "Hotel Point Booking Engine",
+    type: "website",
+    category: "Hospitality & Travel",
+    image: "/projects/hotelpoint.png",
+    link: "https://booking-engine.hotelpoint.io/?checkinDate=2025-09-11&checkoutDate=2025-09-12&lang=en&mapCoordinates=69.49695869161496%2C22.006526861510537%2C53.026214124999996%2C-53.321442125000004",
+    description: "A booking engine that simplifies hotel reservations with an easy-to-use interface.",
+    overview: "Hotel Point Booking Engine provides a modern solution for travelers to find and book hotels with ease. The platform offers search, availability checks, and instant booking in a seamless experience. It empowers hotels to showcase their listings while giving users a smooth and trustworthy booking process.",
+    problems: [
+      "Fragmented hotel booking platforms",
+      "Users face difficulty comparing availability and pricing",
+      "Hotels lack direct booking solutions"
+    ],
+    goals: [
+      "Provide a direct and simple hotel booking experience",
+      "Help hotels manage availability and reservations easily",
+      "Offer travelers a trustworthy and seamless interface"
+    ],
+    techStack: ["Next.js", "Tailwind", "Node.js", "PostgreSQL"]
   }
 ];

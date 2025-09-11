@@ -22,6 +22,7 @@
  */
 
 import type { Config } from "tailwindcss";
+import typography from "@tailwindcss/typography";
 
 const config: Config = {
   darkMode: "class", // Enable dark mode via class strategy
@@ -113,6 +114,41 @@ const config: Config = {
           teams: "#0FB89C", // Mint Green
         },
       },
+      typography: {
+      DEFAULT: {
+        css: {
+          h1: { fontWeight: "700", fontSize: "2rem", color: "#111827" },
+          h2: { fontWeight: "600", color: "#1f2937" },
+          code: {
+            backgroundColor: "#f3f4f6",
+            padding: "0.25rem 0.5rem",
+            borderRadius: "0.375rem",
+          },
+          "code::before": { content: "none" },
+          "code::after": { content: "none" },
+          pre: {
+            backgroundColor: "#1f2937",
+            color: "#f9fafb",
+            borderRadius: "0.5rem",
+            padding: "1rem",
+          },
+          a: { color: "#2563eb", textDecoration: "underline" },
+        },
+      },
+      invert: {
+  css: {
+    h1: { color: "#FFFFFF" },
+    h2: { color: "#FFFFFF" },
+    h3: { color: "#FFFFFF" },
+    h4: { color: "#FFFFFF" },
+    h5: { color: "#FFFFFF" },
+    h6: { color: "#FFFFFF" },
+    code: { backgroundColor: "#374151" },
+    pre: { backgroundColor: "#111827" },
+  },
+},
+    },
+
   backgroundImage: {
   'client-slider-gradient-dark': 'linear-gradient(90deg, #000000 0%, #213152 20%, #0FB89C 50%, #213152 80%, #000000 100%)', // Fades from dark at edges to mint highlight in center
   /**
@@ -149,7 +185,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [typography],
 };
 
 export default config;
