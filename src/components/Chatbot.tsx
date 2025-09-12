@@ -1,6 +1,8 @@
 "use client";
 
+import { Send, X, Bot } from "lucide-react";
 import { useState } from "react";
+import { FaRobot, FaUser } from "react-icons/fa";
 
 export default function Chatbot() {
   const [open, setOpen] = useState(false);
@@ -8,11 +10,11 @@ export default function Chatbot() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // Use NEXT_PUBLIC_API_URL from .env, fallback to localhost
   const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+
   const sendMessage = async () => {
     if (!input.trim()) return;
-    const userMessage: { role: "user" | "bot"; text: string } = { role: "user", text: input };
+    const userMessage = { role: "user" as const, text: input };
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
     setLoading(true);
@@ -25,11 +27,10 @@ export default function Chatbot() {
       });
 
       const data = await res.json();
-    const botMessage: { role: "user" | "bot"; text: string } = { role: "bot", text: data?.response || "Something went wrong." };
-
+      const botMessage = { role: "bot" as const, text: data?.response || "Something went wrong." };
       setMessages((prev) => [...prev, botMessage]);
     } catch {
-  setMessages((prev) => [...prev, { role: "bot", text: "⚠️ Failed to connect to server." }]);
+      setMessages((prev) => [...prev, { role: "bot", text: "⚠️ Failed to connect to server." }]);
     } finally {
       setLoading(false);
     }
@@ -40,7 +41,10 @@ export default function Chatbot() {
       {/* Floating Button */}
       <button
         onClick={() => setOpen(!open)}
-        className="fixed bottom-4 right-4 z-50 w-14 h-14 rounded-full shadow-lg bg-brand text-accent-mint flex items-center justify-center hover:bg-brand/90 transition"
+        className="fixed bottom-4 right-4 z-50 w-12 h-12 rounded-full shadow-lg 
+                   bg-brand-gradient dark:bg-mint-neon-gradient-dark 
+                   text-white flex items-center justify-center 
+                   hover:scale-110 transition-all duration-300"
         aria-label="Open chat"
       >
         💬
@@ -48,52 +52,89 @@ export default function Chatbot() {
 
       {/* Chat Window */}
       {open && (
-        <div className="fixed bottom-20 right-4 z-50 w-80 h-96 bg-background shadow-xl rounded-2xl border border-header-border flex flex-col overflow-hidden animate-fade-in">
+        <div
+          className="fixed bottom-20 right-4 z-50 w-80 h-96 
+                     bg-white dark:bg-black shadow-2xl rounded-lg 
+                     border border-header-border flex flex-col 
+                     overflow-hidden animate-fade-in"
+        >
           {/* Header */}
-          <div className="bg-brand text-accent-mint px-4 py-2 font-semibold flex items-center justify-between">
-            <span>AI Assistant</span>
+          <div className="bg-brand-gradient dark:bg-mint-neon-gradient-dark text-white px-4 py-4 rounded-t-lg flex items-center justify-between shadow-md">
+            <span className="font-semibold text-sm tracking-wide">AI Assistant</span>
             <button
               onClick={() => setOpen(false)}
-              className="ml-2 text-lg text-accent-mint/70 hover:text-accent-mint"
+              className="ml-2 text-lg text-black/70 hover:text-black bg-white rounded-full w-5 h-5 flex justify-center items-center"
               aria-label="Close chat"
             >
-              ×
+              <X size={14} />
             </button>
           </div>
 
           {/* Messages */}
-          <div className="flex-1 p-3 space-y-2 overflow-y-auto text-sm bg-background">
-            {messages.map((msg: { role: "user" | "bot"; text: string }, i: number) => (
+          <div className="flex-1 p-4 space-y-3 overflow-y-auto text-sm bg-background dark:bg-black/80">
+            {messages.map((msg, i) => (
               <div
                 key={i}
-                className={`p-2 rounded-lg max-w-[80%] whitespace-pre-line break-words ${
-                  msg.role === "user"
-                    ? "ml-auto bg-brand text-accent-mint"
-                    : "mr-auto bg-accent-mint/10 text-foreground border border-accent-mint/30"
+                className={`flex items-end gap-2 ${
+                  msg.role === "user" ? "justify-end" : "justify-start"
                 }`}
               >
-                {msg.text}
+                {/* Bot icon on left */}
+                {msg.role === "bot" && (
+                  <div className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200">
+                    
+                    <FaRobot size={18}/>
+                  </div>
+                )}
+
+                {/* Message bubble */}
+                <div
+                  className={`p-3 rounded-2xl max-w-[70%] whitespace-pre-line break-words shadow-sm
+                    ${
+                      msg.role === "user"
+                        ? "bg-brand-gradient text-white"
+                        : "bg-gray-100 dark:bg-gray-800 text-foreground dark:text-white"
+                    }`}
+                >
+                  {msg.text}
+                </div>
+
+                {/* User icon on right */}
+                {msg.role === "user" && (
+                  <div className="w-8 h-8 flex items-center justify-center rounded-full bg-brand-gradient text-white">
+                    
+                    <FaUser size={16} />
+                  </div>
+                )}
               </div>
             ))}
-            {loading && <div className="text-xs text-accent-mint/70">Thinking...</div>}
+
+            {loading && (
+              <div className="flex items-center gap-2 text-xs text-accent-mint/70 animate-pulse">
+                <Bot size={14} /> Typing...
+              </div>
+            )}
           </div>
 
           {/* Input */}
-          <div className="flex border-t border-header-border bg-background">
+          <div className="flex items-center gap-2 border-t border-header-border/20 px-3 py-4 bg-background dark:bg-black/70">
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && sendMessage()}
-              placeholder="Type a message..."
-              className="flex-1 px-3 py-2 text-sm bg-background outline-none text-foreground"
+              placeholder="Write your message here..."
+              className="flex-1 px-3 py-2 text-sm rounded-full border border-gray-300 dark:border-gray-700 
+                         bg-white dark:bg-black/50 outline-none text-foreground dark:text-white 
+                         placeholder:text-gray-400"
               disabled={loading}
             />
             <button
               onClick={sendMessage}
-              className="px-4 bg-brand text-accent-mint hover:bg-brand/90 transition disabled:opacity-50"
+              className="p-2 rounded-full bg-brand-gradient dark:bg-mint-neon-gradient-dark 
+                         text-white hover:opacity-90 transition-all disabled:opacity-50 flex items-center justify-center"
               disabled={loading || !input.trim()}
             >
-              Send
+              <Send className="w-4 h-4" />
             </button>
           </div>
         </div>
