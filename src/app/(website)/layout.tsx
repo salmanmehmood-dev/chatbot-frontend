@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { DarkModeProvider } from "@/context/DarkModeContext";
+import { Header } from "@/components/header/header";
+import { Footer } from "@/components/home/footer";
+import Chatbot from "@/components/Chatbot";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -71,7 +74,10 @@ export default function RootLayout({
       >
         <div className="relative flex min-h-screen flex-col">
          <DarkModeProvider>
+          <Header />
           {children}
+          <Footer />
+          <Chatbot />
         </DarkModeProvider>
         </div>
       </body>

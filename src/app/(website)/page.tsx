@@ -1,5 +1,4 @@
 import { HireBanner } from "@/components/common/banner";
-import { Header } from "@/components/header/header";
 import { CaseStudySection } from "@/components/home/case-studies";
 import { ClientsSection } from "@/components/home/client-section";
 import type { Metadata } from "next";
@@ -7,7 +6,6 @@ import { ContactSection } from "@/components/home/contact-us";
 import { DevelopmentApproachSection } from "@/components/home/development-approch-section";
 import DevelopmentProcess from "@/components/home/development-process-section";
 import FeaturedResources from "@/components/home/featured-resources-section";
-import { Footer } from "@/components/home/footer";
 import { GreatSoftwareSection } from "@/components/home/great-software-section";
 import { HeroSection } from "@/components/home/hero-section";
 import { ServicesSection } from "@/components/home/services-section";
