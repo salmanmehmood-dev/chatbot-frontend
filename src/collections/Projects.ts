@@ -1,10 +1,7 @@
 import { CollectionConfig } from 'payload';
 
-const Projects: CollectionConfig = {
+export const Projects: CollectionConfig = {
   slug: 'projects',
-  admin: {
-    useAsTitle: 'title',
-  },
   fields: [
     {
       name: 'title',
@@ -13,8 +10,8 @@ const Projects: CollectionConfig = {
     },
     {
       name: 'description',
-      type: 'textarea',
-      required: false,
+      type: 'text',
+      required: true,
     },
     {
       name: 'tags',
@@ -32,8 +29,9 @@ const Projects: CollectionConfig = {
       type: 'relationship',
       relationTo: 'users',
       required: false,
+      admin: {
+        position: 'sidebar',
+      },
     },
   ],
 };
-
-export { Projects };

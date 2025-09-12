@@ -7,17 +7,18 @@ import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
 
-import { Blogs } from './collections/Blogs'
 import { Users } from './collections/Users'
+import { Media } from './collections/Media'
+import { Blogs } from './collections/Blogs'
 import { Projects } from './collections/Projects'
 import { Websites } from './collections/Websites'
-import { Media } from './collections/Media'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
   admin: {
+    user: Users.slug,
     importMap: {
       baseDir: path.resolve(dirname),
     },

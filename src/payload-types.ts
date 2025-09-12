@@ -198,7 +198,7 @@ export interface Blog {
 export interface Project {
   id: number;
   title: string;
-  description?: string | null;
+  description: string;
   tags?:
     | {
         tag?: string | null;

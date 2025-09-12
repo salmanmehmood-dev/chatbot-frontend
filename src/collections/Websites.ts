@@ -1,6 +1,6 @@
 import { CollectionConfig } from 'payload';
 
-const Websites: CollectionConfig = {
+export const Websites: CollectionConfig = {
   slug: 'websites',
   admin: {
     useAsTitle: 'url',
@@ -15,9 +15,6 @@ const Websites: CollectionConfig = {
     {
       name: 'name',
       type: 'text',
-      required: false,
     },
   ],
 };
-
-export { Websites };
