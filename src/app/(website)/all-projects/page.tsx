@@ -1,30 +1,32 @@
-'use client'
+"use client"
 
-import { useState } from 'react'
-import { projects } from '@/data'
-import Image from 'next/image'
-import Link from 'next/link'
+import { useState } from "react"
+import { projects } from "@/data"
+import Image from "next/image"
+import Link from "next/link"
 
-type TabName = 'all' | 'mobile' | 'website' | 'crypto'
+type TabName = "all" | "mobile" | "website" | "crypto"
 
 const tabs: { label: string; value: TabName }[] = [
-  { label: 'All Projects', value: 'all' },
-  { label: 'Mobile Apps', value: 'mobile' },
-  { label: 'Landing Pages', value: 'website' },
-  { label: 'Crypto', value: 'crypto' },
+  { label: "All Projects", value: "all" },
+  { label: "Mobile Apps", value: "mobile" },
+  { label: "Landing Pages", value: "website" },
+  { label: "Crypto", value: "crypto" },
 ]
 
 export default function AllProjects() {
-  const [activeTab, setActiveTab] = useState<TabName>('all')
+  const [activeTab, setActiveTab] = useState<TabName>("all")
 
   const filteredProjects =
-    activeTab === 'all' ? projects : projects.filter((p) => p.type === activeTab)
+    activeTab === "all" ? projects : projects.filter((p) => p.type === activeTab)
 
   return (
-    <section className="bg-black text-white w-full md:py-24 py-8 flex justify-center min-h-screen">
+    <section className="bg-white dark:bg-black text-black dark:text-white w-full md:py-24 py-8 flex justify-center min-h-screen">
       <div className="w-[90%] max-w-[1700px] flex flex-col gap-6">
         {/* Heading */}
-        <h1 className="text-4xl mb-4 text-center font-bold text-accent-mint">All Projects</h1>
+        <h1 className="text-4xl mb-4 text-center font-bold text-brand dark:text-accent-mint">
+          All Projects
+        </h1>
 
         {/* Tab buttons */}
         <div className="flex justify-center space-x-6 mb-12" role="tablist">
@@ -37,8 +39,8 @@ export default function AllProjects() {
               aria-controls={`projects-panel-${tab.value}`}
               className={`px-4 py-2 text-sm md:text-base font-medium border-b-2 transition-all duration-300 focus:outline-none rounded-t ${
                 activeTab === tab.value
-                  ? 'text-accent-mint border-accent-mint'
-                  : 'text-white/60 border-transparent hover:text-accent-mint'
+                  ? "text-brand dark:text-accent-mint border-brand dark:border-accent-mint"
+                  : "text-gray-500 dark:text-white/60 border-transparent hover:text-brand dark:hover:text-accent-mint"
               }`}
             >
               {tab.label}
@@ -50,12 +52,12 @@ export default function AllProjects() {
         <div
           id={`projects-panel-${activeTab}`}
           role="tabpanel"
-          className="grid grid-cols-1 sm:grid-cols-2  gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-8"
         >
           {filteredProjects.map((p) => (
             <div
               key={p.id}
-              className="relative group rounded-2xl overflow-hidden border border-gray-800 shadow hover:shadow-lg transition"
+              className="relative group rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow hover:shadow-lg transition bg-white dark:bg-gray-900"
             >
               {/* Project image */}
               <div className="relative w-full sm:h-[300px] h-[250px]">
@@ -72,8 +74,8 @@ export default function AllProjects() {
               {/* Hover overlay */}
               <div className="absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
                 <Link
-                  href={`/all-projects/${p.projectId}`} 
-                  className="px-4 py-2 bg-accent-mint w-[230px] text-center text-black font-medium rounded-lg"
+                  href={`/all-projects/${p.projectId}`}
+                  className="px-4 py-2 bg-brand dark:bg-accent-mint w-[230px] text-center text-white dark:text-black font-medium rounded-lg"
                 >
                   View Project
                 </Link>
@@ -81,8 +83,10 @@ export default function AllProjects() {
 
               {/* Project info */}
               <div className="p-4 flex flex-col gap-2">
-                <h2 className="text-2xl font-semibold">{p.title}</h2>
-                <p className="text-sm text-gray-400">{p.category}</p>
+                <h2 className="text-2xl font-semibold text-black dark:text-white">
+                  {p.title}
+                </h2>
+                <p className="text-sm text-gray-600 dark:text-gray-400">{p.category}</p>
               </div>
             </div>
           ))}

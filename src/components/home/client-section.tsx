@@ -52,12 +52,12 @@ export function ClientsSection() {
 
       {/* Marquee Logo Slider */}
       <div className="flex justify-center">
-        <div className="marquee sm:h-50 md:h-56 lg:h-60 h-30 max-w-7xl bg-light-lavender dark:bg-client-slider-gradient-dark rounded-lg p-6">
+        <div className="marquee sm:h-50 md:h-56  h-36 max-w-7xl bg-light-lavender dark:bg-client-slider-gradient-dark rounded-lg p-6">
           <div className="marquee-track">
             {[...logos, ...logos].map((logo, idx) => (
               <div
                 key={idx}
-                className="flex flex-col gap-12 justify-center items-center sm:p-24 p-10"
+                className="flex flex-col gap-12 justify-center items-center md:p-24 p-10"
               >
                 <Image
                   src={logo.src}
@@ -67,7 +67,7 @@ export function ClientsSection() {
                   title={logo.name}
                   draggable={false}
                   loading="lazy"
-                  className="max-w-[150px] lg:w-[150px] w-[130px] transition-transform duration-300 hover:scale-125 hover:-translate-y-2"
+                  className="max-w-[120px] lg:w-[120px] w-[100px] transition-transform duration-300 hover:scale-125 hover:-translate-y-2"
                 />
               </div>
             ))}

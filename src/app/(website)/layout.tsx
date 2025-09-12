@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { DarkModeProvider } from "@/context/DarkModeContext";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -69,7 +70,9 @@ export default function RootLayout({
         className={`${inter.variable} antialiased min-h-screen bg-background text-foreground dark:bg-black dark:text-white`}
       >
         <div className="relative flex min-h-screen flex-col">
+         <DarkModeProvider>
           {children}
+        </DarkModeProvider>
         </div>
       </body>
     </html>

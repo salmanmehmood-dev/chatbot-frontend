@@ -2,6 +2,7 @@ import { HireBanner } from "@/components/common/banner";
 import { Header } from "@/components/header/header";
 import { CaseStudySection } from "@/components/home/case-studies";
 import { ClientsSection } from "@/components/home/client-section";
+import type { Metadata } from "next";
 import { ContactSection } from "@/components/home/contact-us";
 import { DevelopmentApproachSection } from "@/components/home/development-approch-section";
 import DevelopmentProcess from "@/components/home/development-process-section";
@@ -15,12 +16,13 @@ import TestimonialsSection from "@/components/home/testimonials-section";
 import { TrustSection } from "@/components/home/trust-section";
 
 
-export const metadata = {
-  title: "My Awesome Site",
-  description:
-    "Welcome to My Awesome Site — explore features, blogs, and resources for developers.",
+export const metadata: Metadata = {
+  title: "ZaufLabs",
+  description: "Welcome to ZaufLabs — building world-class digital solutions.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
-
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground dark:bg-black dark:text-white">
