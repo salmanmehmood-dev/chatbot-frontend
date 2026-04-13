@@ -12,6 +12,21 @@ interface Blog {
   content: string;
 }
 
+interface LexicalNode {
+  type: string;
+  tag?: string;
+  detail?: number;
+  format?: number;
+  text?: string;
+  listType?: 'number' | 'bullet';
+  children?: LexicalNode[];
+  language?: string;
+  fields?: {
+    url?: string;
+    newTab?: boolean;
+  };
+}
+
 async function getBlog(slug: string): Promise<Blog | null> {
   const res = await fetch(`${process.env.NEXT_PUBLIC_CMS_URL}/api/blogs?where[slug][equals]=${slug}`);
   const data = await res.json();
@@ -46,32 +61,32 @@ export default async function BlogPage(props: { params: { slug: string } }) {
 }
 
 // Render Lexical JSON Content
-function renderLexicalNode(node: any, key?: React.Key): React.ReactNode {
+function renderLexicalNode(node: LexicalNode, key?: React.Key): React.ReactNode {
   if (!node) return null;
 
   switch (node.type) {
     case 'root':
-      return node.children?.map((child: any, i: number) => renderLexicalNode(child, i));
+      return node.children?.map((child: LexicalNode, i: number) => renderLexicalNode(child, i));
 
     case 'heading': {
-      const Tag = node.tag || `h${node.detail || 2}`;
+      const Tag = (node.tag || `h${node.detail || 2}`) as keyof React.JSX.IntrinsicElements;
       return React.createElement(
         Tag,
         { key, className: 'font-bold mt-6 mb-3 text-header-text dark:text-accent-mint' },
-        node.children?.map((child: any, i: number) => renderLexicalNode(child, i))
+        node.children?.map((child: LexicalNode, i: number) => renderLexicalNode(child, i))
       );
     }
 
     case 'paragraph':
       return (
         <p key={key} className="mb-4 leading-relaxed">
-          {node.children?.map((child: any, i: number) => renderLexicalNode(child, i))}
+          {node.children?.map((child: LexicalNode, i: number) => renderLexicalNode(child, i))}
         </p>
       );
 
     case 'codeblock': {
       const language = node.language || 'bash';
-      const code = node.children?.map((child: any) => child.text).join('\n') || '';
+      const code = node.children?.map((child: LexicalNode) => child.text).join('\n') || '';
       return (
         <pre
           key={key}
@@ -106,12 +121,12 @@ function renderLexicalNode(node: any, key?: React.Key): React.ReactNode {
       return React.createElement(
         ListTag,
         { key, className: 'ml-6 list-disc mb-4' },
-        node.children?.map((child: any, i: number) => renderLexicalNode(child, i))
+        node.children?.map((child: LexicalNode, i: number) => renderLexicalNode(child, i))
       );
     }
 
     case 'listitem':
-      return <li key={key}>{node.children?.map((child: any, i: number) => renderLexicalNode(child, i))}</li>;
+      return <li key={key}>{node.children?.map((child: LexicalNode, i: number) => renderLexicalNode(child, i))}</li>;
 
     case 'link':
       return (
@@ -122,7 +137,7 @@ function renderLexicalNode(node: any, key?: React.Key): React.ReactNode {
           rel="noopener noreferrer"
           className="text-accent-mint underline hover:text-brand dark:text-accent-mint"
         >
-          {node.children?.map((child: any, i: number) => renderLexicalNode(child, i))}
+          {node.children?.map((child: LexicalNode, i: number) => renderLexicalNode(child, i))}
         </a>
       );
 
@@ -143,7 +158,7 @@ function renderLexicalNode(node: any, key?: React.Key): React.ReactNode {
     }
 
     default:
-      return node.children?.map((child: any, i: number) => renderLexicalNode(child, i));
+      return node.children?.map((child: LexicalNode, i: number) => renderLexicalNode(child, i));
   }
 }
 

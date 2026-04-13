@@ -7,6 +7,17 @@ async function getBlogs() {
   return data.docs;
 }
 
+interface Blog {
+  id: string;
+  title: string;
+  slug: string;
+  date: string;
+  author: string;
+  image?: {
+    url: string;
+  };
+}
+
 export default async function BlogsPage() {
   const blogs = await getBlogs();
 
@@ -15,7 +26,7 @@ export default async function BlogsPage() {
       <h1 className="text-3xl font-bold mb-6 text-brand dark:text-white">Blogs</h1>
       <ul>
         {Array.isArray(blogs) && blogs.length > 0 ? (
-          blogs.map((blog: any) => (
+          blogs.map((blog: Blog) => (
             <li key={blog.id} className="mb-8">
               <Link href={`/blogs/${blog.slug}`}
                 className="block group rounded-xl transition-all duration-200 border border-header-border dark:border-dark-border bg-white dark:bg-header-background/60 hover:bg-accent-mint/10 dark:hover:bg-header-background/80 shadow-sm hover:shadow-lg">
