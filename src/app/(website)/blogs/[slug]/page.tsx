@@ -33,7 +33,7 @@ async function getBlog(slug: string): Promise<Blog | null> {
   return data.docs[0] || null;
 }
 
-export default async function BlogPage(props: { params: { slug: string } }) {
+export default async function BlogPage(props: { params: Promise<{ slug: string }> }) {
   const params = await props.params;
   const blog = await getBlog(params.slug);
   if (!blog) return notFound();
